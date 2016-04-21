@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enquete</title>
+  <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+  <link rel="stylesheet" href="style.css">
+
+  <script language="javascript">
+
+    function validarCampos(){
+
+      if(document.form.slcNavegador.value!="Chrome" && 
+       document.form.slcNavegador.value!="Firefox" &&
+       document.form.slcNavegador.value!="Opera" &&
+       document.form.slcNavegador.value!="Edge" &&
+       document.form.slcNavegador.value!="Outros"
+       ) {
+        window.alert( "Escolha o navegador" );
+      document.form.slcNavegador.focus();
+      return false;
+    }
+
+    return true;
+  }
+
+
+</script>
+
+
+</head>
+
+
+<body>
+  <div id="div-form" class="estilo1">
+
+    <center><h1>Enquete</h1></center>
+    <p class="p-linha">Por favor, complete o formulário.</p>
+
+    <br/>
+
+    <form id="form" name="form" method="post" action="operacoes.php" onsubmit="return validarCampos()">
+
+    	<input type="hidden" name="iptHidden" id="iptHidden" value="opVotar">
+
+
+      <label for="slcNavegador">Qual o melhor navegador da atualidade?
+        <span>De acordo com a sua opinião, escolha uma opção:</span>
+      </label>
+      <select name="slcNavegador" id="slcNavegador" class=".styled-select">
+        <option selected value="0">Selecione</option>
+        <option value="Chrome">Chrome</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Opera">Opera</option>
+        <option value="Edge">Edge</option>
+        <option value="Outros">Outros</option>
+      </select>
+
+
+      <button type="submit" class="btn-formulario">Gravar</button>
+
+
+      <div class="spacer"></div>
+
+    </form>
+
+    <br/>
+
+    <form id="formResultado" name="formResultado" method="post" action="operacoes.php">
+      <input type="hidden" name="iptHidden" id="iptHidden" value="opResultado">
+      <button type="submit" class="btn-formulario">Resultado</button>
+    </form>
+
+  </div>
+
+  <br/>
+
+  <div id="div-form" class="estilo1">
+    <center><font color= #3e3e3e><h1>Lucas Luzini</h1>
+      <h2>Promação Para Internet Si5 N</h2>
+      <b><i>funciona melhor no Google Chrome</font></i></b>
+    </center></div>
+
+  </body>
+  </html>

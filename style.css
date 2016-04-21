@@ -1,0 +1,150 @@
+        body{
+            background: #373737;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            font-size:14px;
+        }
+        p, h1, form, button{
+            border:0; 
+            margin:0; 
+            padding:0;
+        }
+
+        .spacer{
+            clear:both; 
+            height:1px;
+        }
+
+        .estilo1{
+            margin:0 auto;
+            width:550px;
+            padding:14px;
+        }
+
+        .estilo2{
+            margin:0 auto;
+            min-width: 550px;
+            width: fit-content;
+            padding:14px;
+            position: relative;
+        }
+
+        #div-form{
+            background: none repeat scroll 0 0 #C6C6C6;
+            border: 5px solid #8B8B8B;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -op-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+        #div-form h1 {
+            font-weight:bold;
+            margin-bottom:8px;
+        }
+        #div-form .p-linha{
+            font-size:11px;
+            color:#666666;
+            margin-bottom:20px;
+            border-bottom:solid 3px #7E7E7E;
+            padding-bottom:10px;
+        }
+        #div-form label{
+            display:block;
+            font-weight:bold;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            text-align:right;
+            width:193px;
+            float:left;
+        }
+        #div-form span{
+            color:#666666;
+            display:block;
+            font-size:11px;
+            font-weight:normal;
+            text-align:right;
+            width:193px;
+        }
+        #div-form input[type=text],#div-form textarea, #div-form input[type=money], #div-form input[type=date]{
+            float:left;
+            border:solid 3px #aacfe4;
+            width:284px;
+            margin:2px 0 20px 10px;
+            border-radius: 15px;
+            -moz-border-radius: 15px;
+            -op-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            font-size: 14px;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            font-weight: bold;
+        }
+
+        #div-form input[type=text], #div-form input[type=money], #div-form input[type=date]{
+            height: 25px;
+            padding: 4px 10px;
+        }
+        
+        #div-form select{
+            height: 35px;
+            width: 310px;
+            padding: 4px 10px;
+            float:left;
+            border:solid 3px #aacfe4;
+            margin:2px 0 20px 10px;
+            border-radius: 15px;
+            -moz-border-radius: 15px;
+            -op-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            font-size: 14px;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            font-weight: bold;
+            color: #757575;
+        }
+        
+        #div-form textarea{
+            padding: 10px 10px;
+            overflow: auto;
+        }
+
+        #div-form button.btn-formulario {
+           background: #2c3e4a;
+           background: -webkit-gradient(linear, left top, left bottom, from(#919496), to(#2c3e4a));
+           background: -webkit-linear-gradient(top, #919496, #2c3e4a);
+           background: -moz-linear-gradient(top, #919496, #2c3e4a);
+           background: -ms-linear-gradient(top, #919496, #2c3e4a);
+           background: -o-linear-gradient(top, #919496, #2c3e4a);
+           padding: 5px 10px;
+           -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+           border-radius: 15px;
+           margin-left: 315px;
+           color: white;
+           font-size: 20px;
+           font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+           text-decoration: none;
+           vertical-align: middle;
+       }
+
+       #div-form button.btn-index {
+           background: #2c3e4a;
+           background: -webkit-gradient(linear, left top, left bottom, from(#919496), to(#2c3e4a));
+           background: -webkit-linear-gradient(top, #919496, #2c3e4a);
+           background: -moz-linear-gradient(top, #919496, #2c3e4a);
+           background: -ms-linear-gradient(top, #919496, #2c3e4a);
+           background: -o-linear-gradient(top, #919496, #2c3e4a);
+           padding: 5px 10px;
+           -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+           border-radius: 15px;
+           margin:auto;
+           display:block;
+           color: white;
+           font-size: 20px;
+           font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+           text-decoration: none;
+           vertical-align: middle;
+       }
+
+       #div-form button:hover{
+           background: #3d4b54;
+           color: #ccc;
+       }
+
