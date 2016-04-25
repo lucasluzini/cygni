@@ -1,5 +1,0 @@
-create table votos(
-ip varchar(15) not null,
-navegador varchar(15) not null,
-constraint pkip primary key (ip)
-);
