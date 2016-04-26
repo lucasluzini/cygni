@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Cadastro</title>
+
+ <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="bootstrap/css/style.css" rel="stylesheet">
+  <script>
+   function valida(){
+	  
+	  if(document.lo.nome.value==""){
+		alert("Por favor preencha o campo nome");
+		return false;
+	  }
+	  if(document.lo.usuario.value==""){
+		alert("Por favor preencha o campo Usuário");
+		
+		return false;
+	  }
+	  if(document.lo.senha.value==""){
+		alert("Por favor preencha o campo Senha");
+		return false;
+	  }
+  }
+  </script>
+</head>
+<body> 
+
+ <script src="bootstrap/js/jquery.min.js"></script>
+ <script src="bootstrap/js/bootstrap.min.js"></script>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+ <div id="main" class="container-fluid">
+ <h3 class="page-header">Sistema controle de patrimônio - Cadastro de usuario</h3>
+</div>
+  <div class="navbar-header">
+   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Cadastrar</span>
+   </button>
+   <a class="navbar-brand" href="index.html">Início</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+  <form name="lo" align="center" action="" method="post" onsubmit="return valida()">
+			
+		Nome: <input type="text" name="nome" size="25" placeholder ="Digite aqui seu Nome"/></br>
+				
+		Usuário: <input type="text" name="usuario"size="25" placeholder ="Escolha um usuario"/></br>
+				
+		Senha: <input type="password" name="senha"size="15" placeholder ="Escolha uma senha"/></br>
+				
+		<input type="submit"value="Salvar"/>
+					
+	</form>
+  </div>
+ </div>
+</nav>
+</body>
+</html>
+
+
+
