@@ -24,3 +24,17 @@ git checkout master
 
 
 git merge master
+
+
+Remover Arquivos
+$ git rm foo.R
+
+Remover Pastas
+$ git rm -r pasta/
+
+
+Mover
+$ git mv foo.R
+
+Para remover arquivos do repositorio remoto, mas manter localmente
+$ git rm --cached foo.R
