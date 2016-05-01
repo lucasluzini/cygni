@@ -45,7 +45,7 @@
                               <!-- Text input cidade e estado-->
                               <div class="row">
                                   <div class="col-xs-6 col-md-4 form-group">
-                                  <label for="Nome">Número da nota Fiscal</label>
+                                  <label for="Nome">Número da nota fiscal</label>
                                       <input class="form-control" id="inputnumeronotafiscal" name="inputnumeronotafiscal" placeholder="" type="text" />
                                   </div>
                                   <div class="col-xs-6 col-md-4 form-group">
