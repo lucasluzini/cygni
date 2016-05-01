@@ -7,9 +7,9 @@
 
       <title>Modelo</title>
 
-      <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="../arquivos/css/estilo.css" rel="stylesheet">
-      <link href="../arquivos/css/3.css" rel="stylesheet">
+      <link href="/cygni/arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/estilo.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/3.css" rel="stylesheet">
 
     </head>
     <body>
@@ -132,13 +132,10 @@
 
 
 
-
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
-      <script src="../arquivos/js/menu.js"></script>
-      <script src="../arquivos/js/showride.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/cygni/arquivos/js/menu.js"></script>
+      <script src="/cygni/arquivos/js/showride.js"></script>
 
 
     </body>

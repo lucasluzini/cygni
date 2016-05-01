@@ -7,9 +7,9 @@
 
       <title>Cygni - Controle de Patrimônio</title>
 
-      <link href="arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="arquivos/css/estilo.css" rel="stylesheet">
-      <link href="arquivos/css/3.css" rel="stylesheet">
+      <link href="/cygni/arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/estilo.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/3.css" rel="stylesheet">
 
     </head>
     <body>
@@ -25,18 +25,11 @@
               <div class="row">
                 <div class="col-md-12">
                 <p class="well lead">Cygni - Controle de Patrimônio</p>
+                </div>
 
-               <div class="container">
-                  <div class="row"> <!-- div da esquerda -->
-                      <!-- Text input CNPJ e Razao Social-->
-                      <div class="col-sm-8 contact-form"> <!-- div da direita -->
-                          <form id="contact" method="post" class="form" role="form">
-                              
-                          </form>
-                      </div> <!-- fim div da direita -->
-                  </div> <!-- fim div da esquerda -->
-              </div>
+                <div class="col-md-12">
                 <p class="well lead">Progração para Internet - Si5N - Senac</p> 
+                </div>
               </div>
             </div>
           </div>
@@ -49,12 +42,10 @@
 
 
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="arquivos/bootstrap/js/bootstrap.min.js"></script>
-      <script src="arquivos/js/menu.js"></script>
-      <script src="arquivos/js/showride.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/cygni/arquivos/js/menu.js"></script>
+      <script src="/cygni/arquivos/js/showride.js"></script>
 
 
     </body>

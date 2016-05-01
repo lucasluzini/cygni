@@ -7,9 +7,9 @@
 
       <title>Cadastro de Prédios</title>
 
-      <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="../arquivos/css/estilo.css" rel="stylesheet">
-      <link href="../arquivos/css/3.css" rel="stylesheet">
+      <link href="/cygni/arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/estilo.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/3.css" rel="stylesheet">
 
     </head>
     <body>
@@ -24,7 +24,7 @@
           <div class="page-content inset">
               <div class="row">
                 <div class="col-md-12">
-                <p class="well lead">Cadastro de Prédios</p>
+                <p class="well lead">Cadastro de prédio</p>
 
                <div class="container">
                   <div class="row"> <!-- div da esquerda -->
@@ -34,7 +34,7 @@
                               <div class="row">
                                   <div class="col-xs-6 col-md-3 form-group">
                                   <label for="Nome">Código</label>
-                                      <input class="form-control" id="inputcodigo" name="codigo" placeholder="" type="text" required autofocus />
+                                      <input class="form-control" id="inputcodigo" name="codigo" placeholder="" type="text" />
                                   </div>
                                   <div class="col-xs-4 col-md-9 form-group">
                                   <label for="Nome">Nome</label>
@@ -73,13 +73,10 @@
 
 
 
-
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
-      <script src="../arquivos/js/menu.js"></script>
-      <script src="../arquivos/js/showride.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/cygni/arquivos/js/menu.js"></script>
+      <script src="/cygni/arquivos/js/showride.js"></script>
 
 
     </body>

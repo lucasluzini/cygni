@@ -1,3 +1,13 @@
+Passo Inicial - Configuração
+git config --global user.name "seu usuario"
+git config --global user.email "seu email"
+
+
+
+
+
+Comandos exenciais
+
 git clone https://github.com/lzni/cygni.git
 git add <arquivos> ou $git add <pasta> ou $git add *
 git commit –m comentários
@@ -27,14 +37,21 @@ git merge master
 
 
 	Remover Arquivos
-$ git rm foo.R
+git rm foo.R
 
 	Remover Pastas
-$ git rm -r pasta/
+git rm -r pasta/
 
 
 	Mover
-$ git mv foo.R
+git mv foo.R
 
 	Para remover arquivos do repositorio remoto, mas manter localmente
-$ git rm --cached foo.R
+git rm --cached foo.R
+
+
+	SALVA USUARIO E SENHA POR 8 HORAS:
+git config --global credential.helper 'cache --timeout=28800'
+
+	SALVA USUARIO E SENHA PERMANENTE:
+git config --global credential.helper cache

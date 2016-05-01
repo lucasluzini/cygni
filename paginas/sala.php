@@ -7,9 +7,9 @@
 
       <title>Cadastro de Sala</title>
 
-      <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="../arquivos/css/estilo.css" rel="stylesheet">
-      <link href="../arquivos/css/3.css" rel="stylesheet">
+      <link href="/cygni/arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/estilo.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/3.css" rel="stylesheet">
 
     </head>
     <body>
@@ -24,7 +24,7 @@
           <div class="page-content inset">
               <div class="row">
                 <div class="col-md-12">
-                <p class="well lead">Cadastro de Sala</p>
+                <p class="well lead">Cadastro de sala</p>
 
                <div class="container">
                   <div class="row"> <!-- div da esquerda -->
@@ -34,7 +34,7 @@
                               <div class="row">
                                   <div class="col-xs-6 col-md-4 form-group">
                                   <label for="Nome">Número</label>
-                                      <input class="form-control" id="inputnumero" name="inputnumero" placeholder="" type="text" required autofocus />
+                                      <input class="form-control" id="inputnumero" name="inputnumero" placeholder="" type="text" />
                                   </div>
                                   <div class="col-xs-4 col-md-4 form-group">
                                   <label for="Nome">Comprimento</label>
@@ -49,11 +49,11 @@
                               <!-- Text input cidade e estado-->
                               <div class="row">
                                   <div class="col-xs-6 col-md-4 form-group">
-                                  <label for="Nome">Código do Prédio</label>
-                                      <input class="form-control" id="inputcodpredio" name="inputcodpredio" placeholder="" type="text" required autofocus />
+                                  <label for="Nome">Código do prédio</label>
+                                      <input class="form-control" id="inputcodpredio" name="inputcodpredio" placeholder="" type="text" />
                                   </div>
                                   <div class="col-xs-4 col-md-4 form-group">
-                                  <label for="Nome">Sigla do Departamento</label>
+                                  <label for="Nome">Sigla do departamento</label>
                                       <input class="form-control" id="inputsigladepartamento" name="inputsigladepartamento" placeholder="" type="text" />
                                   </div>
                                   <div class="clearfix"></div>
@@ -86,12 +86,10 @@
 
 
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
-      <script src="../arquivos/js/menu.js"></script>
-      <script src="../arquivos/js/showride.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/cygni/arquivos/js/menu.js"></script>
+      <script src="/cygni/arquivos/js/showride.js"></script>
 
 
     </body>

@@ -7,9 +7,9 @@
 
       <title>Cadastro de usuário</title>
 
-      <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="../arquivos/css/estilo.css" rel="stylesheet">
-      <link href="../arquivos/css/3.css" rel="stylesheet">
+      <link href="/cygni/arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/estilo.css" rel="stylesheet">
+      <link href="/cygni/arquivos/css/3.css" rel="stylesheet">
 
     </head>
     <body>
@@ -34,22 +34,22 @@
                               <div class="row">
                                   <div class="col-xs-6 col-md-6 form-group">
                                   <label for="Nome">Nome</label>
-                                      <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required autofocus />
+                                      <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" />
                                   </div>
                                   <div class="clearfix"></div>
                                   <div class="col-xs-6 col-md-6 form-group">
                                   <label for="Nome">Login</label>
-                                      <input class="form-control" id="inputlogin" name="inputlogin" placeholder="" type="text" required autofocus />
+                                      <input class="form-control" id="inputlogin" name="inputlogin" placeholder="" type="text" />
                                   </div>
                                   <div class="clearfix"></div>
                                   <div class="col-xs-6 col-md-6 form-group">
                                   <label for="Nome">Senha</label>
-                                      <input class="form-control" id="inputsenha" name="inputsenha" placeholder="" type="text" required autofocus />
+                                      <input class="form-control" id="inputsenha" name="inputsenha" placeholder="" type="text" />
                                   </div>
                                   <div class="clearfix"></div>
                                   <div class="col-xs-6 col-md-6 form-group">
-                                  <label for="Nome">Nivel de acesso</label>
-                                      <input class="form-control" id="inputnivel" name="inputacesso" placeholder="" type="text" required autofocus />
+                                  <label for="Nome">Nível de acesso</label>
+                                      <input class="form-control" id="inputnivel" name="inputacesso" placeholder="" type="text" />
                                   </div>
                                   <div class="clearfix"></div>
                               </div> <!-- fim row -->
@@ -80,13 +80,10 @@
 
 
 
-
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
-      <script src="../arquivos/js/menu.js"></script>
-      <script src="../arquivos/js/showride.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
+      <script src="/cygni/arquivos/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/cygni/arquivos/js/menu.js"></script>
+      <script src="/cygni/arquivos/js/showride.js"></script>
 
 
     </body>
