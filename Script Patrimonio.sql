@@ -1,5 +1,3 @@
-\c postgres;
-
 drop database cygni;
 
 create database cygni;

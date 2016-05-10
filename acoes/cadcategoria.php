@@ -44,10 +44,10 @@
 
 if (pg_affected_rows($result)!=0){
   //echo "<script language=javascript>alert( 'Aluno exluído corretamente.' );</script>";
-  echo "<h1>Categoria incluído com sucesso</h1>";
+  echo "<h2>Categoria incluído com sucesso</h2>";
 }else{
   //echo "<script language=javascript>alert( 'Aluno NÃO exluído corretamente.' );</script>";
-  echo "<h1>Categoria NÃO incluído com sucesso</h1>";
+  echo "<h2>Categoria NÃO incluído com sucesso</h2>";
 }
 
 ?>
