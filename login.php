@@ -42,8 +42,8 @@
 		  <div class="modal-dialog">
 		  <div class="modal-content">
 			  <div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				  <h1 class="text-center">Login</h1>
+				  <label>login</label>
+				  <h3 class="text-center">CYGNI</h3>
 			  </div>
 			  <div class="modal-body">
 				  <form class="form col-md-12 center-block" action="index.php" >
