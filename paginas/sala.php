@@ -30,19 +30,19 @@
               <div class="row">
 
                 <div class="col-sm-8 contact-form"> 
-                  <form id="contact" method="post" class="form" role="form">
+                  <form id="contact" method="post" class="form" role="form" action="../acoes/cadsala.php">
                     <div class="row">
                       <div class="col-xs-6 col-md-4 form-group">
                         <label for="Nome">Número</label>
-                        <input class="form-control" id="inputnumero" name="inputnumero" placeholder="" type="text" />
+                        <input class="form-control" id="inputnumero" name="inputnumero" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
                       <div class="col-xs-4 col-md-4 form-group">
                         <label for="Nome">Comprimento</label>
-                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="text" />
+                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
                       <div class="col-xs-4 col-md-4 form-group">
                         <label for="Nome">Largura</label>
-                        <input class="form-control" id="inputlargura" name="inputlargura" placeholder="" type="text" />
+                        <input class="form-control" id="inputlargura" name="inputlargura" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
                     </div> 
                     <br> 
@@ -50,7 +50,7 @@
                     <div class="row">
                       <div class="col-xs-6 col-md-4 form-group">
                         <label for="Nome">Código do prédio</label>
-                        <select class="form-control"id="selectpredido" name="selectpredio" >
+                        <select class="form-control" id="selectpredido" name="selectpredio" required="required">
                           <option>Selecione</option>
                           <option>a</option>
                           <option>b</option>
@@ -59,7 +59,7 @@
                       </div>
                       <div class="col-xs-4 col-md-4 form-group">
                         <label for="Nome">Sigla do departamento</label>
-                        <select class="form-control"id="selectdepartamento" name="selectdepartamento" >
+                        <select class="form-control" id="selectdepartamento" name="selectdepartamento" required="required">
                           <option>Selecione</option>
                           <option>a</option>
                           <option>b</option>
@@ -75,7 +75,7 @@
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
                         <button class="btn btn-primary" type="submit">Salvar</button>
-                        <button class="btn btn-primary" type="submit">Limpar</button>
+                        <!-- <button class="btn btn-primary" type="submit">Limpar</button> -->
 
                       </div>
                     </div>

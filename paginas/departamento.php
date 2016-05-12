@@ -32,16 +32,19 @@
                 <div class="col-sm-8 contact-form">
                   <form id="contact" method="post" class="form" role="form" role="form" data-toggle="validator" action="../acoes/caddepartamento.php">
                     <div class="row">
-                      <div class="col-xs-6 col-md-6 form-group">
-                        <label for="Nome">Nome</label>
-                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required="Preencha este campo"/>
-                      </div>
-                      <div class="clearfix"></div>
+
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Sigla</label>
                         <input class="form-control" id="inputsigla" name="inputsigla" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
                       <div class="clearfix"></div>
+
+                      <div class="col-xs-6 col-md-6 form-group">
+                        <label for="Nome">Nome</label>
+                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required="Preencha este campo"/>
+                      </div>
+                      <div class="clearfix"></div>
+
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Responsável</label>
                         <input class="form-control" id="inputresponsavel" name="inputresponsavel" placeholder="" type="text" required="Preencha este campo"/>
@@ -55,7 +58,7 @@
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
                         <button class="btn btn-primary" type="submit">Salvar</button>
-                        <button class="btn btn-primary" type="submit">Limpar</button>
+                        <!-- <button class="btn btn-primary" type="submit">Limpar</button> -->
 
                       </div>
                     </div>

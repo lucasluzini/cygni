@@ -21,13 +21,13 @@ create database cygni;
 	CREATE TABLE departamento (
 		sigla Char(5),
 		nome Varchar(30) NOT NULL,	
-		responsável	Varchar(50)	NOT NULL,
+		responsavel	Varchar(50)	NOT NULL,
 		CONSTRAINT pkDepartamento PRIMARY KEY (sigla)
 	);
 
 	CREATE TABLE sala (
 		numero Serial,
-		comprimeto Numeric(5,2) NOT NULL,	
+		comprimento Numeric(5,2) NOT NULL,	
 		largura	Numeric(5,2) NOT NULL,	
 		codpredio Int NOT NULL,	
 		sigladpto Char(5) NOT NULL,
