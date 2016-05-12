@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro de categoria</title>
+    <title>Cadastro de prédio</title>
 
     <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
@@ -21,7 +21,7 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Cadastro de categoria</p>
+            <p class="well lead">Cadastro de prédio</p>
 
             <div class="container">
               <div class="row">
@@ -36,18 +36,18 @@
                     include_once("../acoes/connect.php");
 
                     $inputnome=$_POST['inputnome'];
-                    $inputdescricao=$_POST['inputdescricao'];
+                    $inputendereco=$_POST['inputendereco'];
 
 
-                    $result = pg_query ($conexao , "insert into categoria(nome, descricao) values ('".$inputnome."', '".$inputdescricao."')");
+                    $result = pg_query ($conexao , "insert into predio(nome, endereco) values ('".$inputnome."', '".$inputendereco."')");
 
 
                     if (pg_affected_rows($result)!=0){
 
-                      echo "<h2>Categoria incluído com sucesso</h2>";
+                      echo "<h2>Prédio incluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Categoria NÃO incluído com sucesso</h2>";
+                      echo "<h2>Prédio NÃO incluído com sucesso</h2>";
                     }
 
                     ?>
@@ -56,7 +56,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/categoria.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/predio.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
