@@ -15,6 +15,7 @@
   <body>
 
     <?php include_once("../paginas/menu.html"); ?>
+    <?php include_once("../acoes/connect.php"); ?>
 
 
 
@@ -29,30 +30,26 @@
               <div class="row"> 
 
                 <div class="col-sm-8 contact-form">
-                  <form id="contact" method="post" class="form" role="form">
+                  <form id="contact" method="post" class="form" role="form" action="../acoes/cadpatrimonio.php">
                     <div class="row">
-                      <div class="col-xs-6 col-md-3 form-group">
-                        <label for="Nome">Número</label>
-                        <input class="form-control" id="inputnumero" name="inputnumero" placeholder="" type="text" />
-                      </div>
-                      <div class="col-xs-4 col-md-9 form-group">
+                      <div class="col-xs-4 col-md-12 form-group">
                         <label for="Nome">Descrição</label>
-                        <input class="form-control" id="inputdescricao" name="inputdescricao" placeholder="" type="text" />
+                        <input class="form-control" id="inputdescricao" name="inputdescricao" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-6 col-md-4 form-group">
                         <label for="Nome">Número da nota fiscal</label>
-                        <input class="form-control" id="inputnumeronotafiscal" name="inputnumeronotafiscal" placeholder="" type="text" />
+                        <input class="form-control" id="inputnumeronotafiscal" name="inputnumeronotafiscal" placeholder="" type="number" required="Preencha este campo"/>
                       </div>
                       <div class="col-xs-6 col-md-4 form-group">
                         <label for="Nome">Data da nota fiscal</label>
-                        <input class="form-control" id="inputdatanotafiscal" name="inputdatanotafiscal" placeholder="" type="text" />
+                        <input class="form-control" id="inputdatanotafiscal" name="inputdatanotafiscal" placeholder="" type="date" required="Preencha este campo"/>
                       </div>
                       <div class="col-xs-6 col-md-4 form-group">
                         <label for="Nome">Valor</label>
-                        <input class="form-control" id="inputvalor" name="inputvalor" placeholder="" type="text" />
+                        <input class="form-control" id="inputvalor" name="inputvalor" placeholder="R$" type="number" step="0.01" required="Preencha este campo"/>
                       </div>
                     </div>
 
@@ -63,29 +60,40 @@
                     <div class="row">
                       <div class="col-xs-6 col-md-8 form-group">
                         <label for="Nome">Fornecedor</label>
-                        <input class="form-control" id="inputfornecedor" name="inputfornecedor" placeholder="" type="text" />
+                        <input class="form-control" id="inputfornecedor" name="inputfornecedor" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
                       <div class="col-xs-4 col-md-4 form-group">
                         <label for="Nome">Situação</label>
-                        <select class="form-control"id="selectsituacao" name="selectsituacao" >
+                        <select class="form-control"id="selectsituacao" name="selectsituacao" required="Preencha este campo">
                           <option>Selecione</option>
-                          <option>Ativo</option>
-                          <option>Inativo</option>
-                          <option>Manutenção</option>
+                          <option value="1">Em uso</option>
+                          <option value="2">Manutenção</option>
+                          <option value="3">Inutilizado</option>
                         </select>
                       </div>
-                      <div class="col-xs-4 col-md-3 form-group">
+                      <div class="col-xs-4 col-md-6 form-group">
                         <label for="Nome">Categoria</label>
-                        <select class="form-control"id="selectcategoria" name="selectcategoria" >
+                        <select class="form-control"id="selectcategoria" name="selectcategoria" required="Preencha este campo">
                           <option>Selecione</option>
-                          <option>Eletrônicos</option>
-                          <option>Imóveis</option>
-                          <option>Monitor</option>
+                          <?php
+                          $result = pg_query ($conexao , "select * from categoria;");
+                              while ($row=pg_fetch_row($result)) {
+                                echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
+                              }
+                          ?>
                         </select>
                       </div>
-                      <div class="col-xs-4 col-md-3 form-group">
-                        <label for="Nome">Número da sala</label>
-                        <input class="form-control" id="inputnumsala" name="inputnumsala" placeholder="" type="text" />
+                      <div class="col-xs-4 col-md-6 form-group">
+                        <label for="Nome">Sala</label>
+                        <select class="form-control"id="selectsala" name="selectsala" required="Preencha este campo">
+                          <option>Selecione</option>
+                          <?php
+                          $result = pg_query ($conexao , "select * from sala;");
+                              while ($row=pg_fetch_row($result)) {
+                                echo "<option value=\"".$row[0]."\">".$row[0]." - ".$row[4]."</option>";
+                              }
+                          ?>
+                        </select>
                       </div>
                       <div class="clearfix">
                       </div>
@@ -95,8 +103,8 @@
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
                         <button class="btn btn-primary" type="submit">Salvar</button>
-                        <button class="btn btn-primary" type="submit">Limpar</button>
-
+                        <!-- <button class="btn btn-primary" type="submit">Limpar</button> -->
+ 
                       </div>
                     </div>
                   </form>
