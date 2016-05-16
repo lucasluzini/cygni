@@ -15,6 +15,7 @@
   <body>
 
     <?php include_once("../paginas/menu.html"); ?>
+    <?php include_once("../acoes/connect.php"); ?>
 
 
     
@@ -32,42 +33,50 @@
                 <div class="col-sm-8 contact-form"> 
                   <form id="contact" method="post" class="form" role="form" action="../acoes/cadsala.php">
                     <div class="row">
-                      <div class="col-xs-6 col-md-4 form-group">
-                        <label for="Nome">Número</label>
-                        <input class="form-control" id="inputnumero" name="inputnumero" placeholder="" type="text" required="Preencha este campo"/>
-                      </div>
-                      <div class="col-xs-4 col-md-4 form-group">
+                      <div class="col-xs-4 col-md-6 form-group">
                         <label for="Nome">Comprimento</label>
-                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="number" step="0.01" required="Preencha este campo"/>
                       </div>
-                      <div class="col-xs-4 col-md-4 form-group">
+                      <div class="clearfix"></div>
+                      <div class="col-xs-4 col-md-6 form-group">
                         <label for="Nome">Largura</label>
-                        <input class="form-control" id="inputlargura" name="inputlargura" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputlargura" name="inputlargura" placeholder="" type="number" step="0.01" required="Preencha este campo"/>
                       </div>
                     </div> 
-                    <br> 
+                    <div class="clearfix"></div>
 
                     <div class="row">
-                      <div class="col-xs-6 col-md-4 form-group">
+                      <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Código do prédio</label>
-                        <select class="form-control" id="selectpredido" name="selectpredio" required="required">
+                        <select class="form-control" id="selectpredio" name="selectpredio" required="required">
                           <option>Selecione</option>
-                          <option>a</option>
-                          <option>b</option>
-                          <option>c</option>
-                        </select>
-                      </div>
-                      <div class="col-xs-4 col-md-4 form-group">
-                        <label for="Nome">Sigla do departamento</label>
-                        <select class="form-control" id="selectdepartamento" name="selectdepartamento" required="required">
-                          <option>Selecione</option>
-                          <option>a</option>
-                          <option>b</option>
-                          <option>c</option>
+
+                          <?php
+                          $result = pg_query ($conexao , "select * from predio;");
+                              while ($row=pg_fetch_row($result)) {
+                                echo "<option value=\"".$row[0]."\">".$row[0]." - ".$row[1]."</option>";
+                              }
+                          ?>
+
                         </select>
                       </div>
                       <div class="clearfix"></div>
 
+                      <div class="col-xs-4 col-md-6 form-group">
+                        <label for="Nome">Sigla do departamento</label>
+                        <select class="form-control" id="selectdepartamento" name="selectdepartamento" required="required">
+                          <option>Selecione</option>
+
+                          <?php
+                          $result = pg_query ($conexao , "select * from departamento;");
+                              while ($row=pg_fetch_row($result)) {
+                                echo "<option value=\"".$row[0]."\">".$row[0]." - ".$row[1]."</option>";
+                              }
+                          ?>
+
+                        </select>
+                      </div>
+                      <div class="clearfix"></div>
                     </div>
 
                     <br />

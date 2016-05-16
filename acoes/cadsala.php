@@ -35,11 +35,16 @@
 
                     include_once("../acoes/connect.php");
 
-                    $inputnome=$_POST['inputnome'];
-                    $inputendereco=$_POST['inputendereco'];
+                    $inputcomprimento=$_POST['inputcomprimento'];
+                    $inputlargura=$_POST['inputlargura'];
+                    $selectpredido=$_POST['selectpredio'];
+                    $selectdepartamento=$_POST['selectdepartamento'];
+
+                    $sql = "insert into sala(comprimento, largura, codpredio, sigladpto) values (".$inputcomprimento.", ".$inputlargura.", ".$selectpredido.", '".$selectdepartamento."')";
 
 
-                    $result = pg_query ($conexao , "insert into predio(nome, endereco) values ('".$inputnome."', '".$inputendereco."')");
+
+                    $result = pg_query ($conexao , $sql);
 
 
                     if (pg_affected_rows($result)!=0){

@@ -26,7 +26,7 @@ create database cygni;
 	);
 
 	CREATE TABLE sala (
-		numero Serial,
+		numero serial,
 		comprimento Numeric(5,2) NOT NULL,	
 		largura	Numeric(5,2) NOT NULL,	
 		codpredio Int NOT NULL,	
