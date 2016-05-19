@@ -50,34 +50,15 @@
                     $result = pg_query ($conexao , $sql);
 
 
-
-                    echo $inputdescricao;
-                    echo "<br>";
-                    echo $inputnumeronotafiscal;
-                    echo "<br>";
-                    echo $inputdatanotafiscal;
-                    echo "<br>";
-                    echo $inputfornecedor;
-                    echo "<br>";
-                    echo $inputvalor;
-                    echo "<br>";
-                    echo $selectsituacao;
-                    echo "<br>";
-                    echo $selectcategoria;
-                    echo "<br>";
-                    echo $selectsala;
-                    echo "<br>";
-                    echo $sql;
-                    echo "<br>";
-
-
                     if (pg_affected_rows($result)!=0){
 
                       echo "<h2>Patrimônio incluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Patrimônio NÃO incluído com sucesso</h2>";
+                      echo "<h2>Patrimônio NÃO incluído</h2>";
                     }
+
+                    pg_close($conexao);
 
                     ?>
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro de sala</title>
+    <title>Cadastro de MBP</title>
 
     <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
@@ -21,7 +21,7 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Cadastro de sala</p>
+            <p class="well lead">Inserir movimentação de bem patrimônial</p>
 
             <div class="container">
               <div class="row">
@@ -35,13 +35,13 @@
 
                     include_once("../acoes/connect.php");
 
-                    $inputcomprimento=$_POST['inputcomprimento'];
-                    $inputlargura=$_POST['inputlargura'];
-                    $selectpredido=$_POST['selectpredio'];
-                    $selectdepartamento=$_POST['selectdepartamento'];
+                    $inputdata=$_POST['inputdata'];
+                    $inputlogin=$_POST['inputlogin'];
+                    $inputnumbem=$_POST['inputnumbem'];
+                    $selectsalaorigem=$_POST['selectsalaorigem'];
+                    $selectsaladestino=$_POST['selectsaladestino'];
 
-                    $sql = "insert into sala(comprimento, largura, codpredio, sigladpto) values (".$inputcomprimento.", ".$inputlargura.", ".$selectpredido.", '".$selectdepartamento."')";
-
+                    $sql = "insert into mbp(data, login, numbem, numsalaorigem, numsaladestino) values ('".$inputdata."', '".$inputlogin."', ".$inputnumbem.", ".$selectsalaorigem.", ".$selectsaladestino.")";
 
 
                     $result = pg_query ($conexao , $sql);
@@ -49,10 +49,10 @@
 
                     if (pg_affected_rows($result)!=0){
 
-                      echo "<h2>Sala incluído com sucesso</h2>";
+                      echo "<h2>Movimentação incluída com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Sala NÃO incluído</h2>";
+                      echo "<h2>Movimentação NÃO incluída</h2>";
                     }
 
                     pg_close($conexao);
@@ -63,7 +63,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/sala.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/mbp.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">

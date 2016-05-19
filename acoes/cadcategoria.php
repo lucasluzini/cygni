@@ -47,8 +47,10 @@
                       echo "<h2>Categoria incluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Categoria NÃO incluído com sucesso</h2>";
+                      echo "<h2>Categoria NÃO incluído</h2>";
                     }
+
+                    pg_close($conexao);
 
                     ?>
 
