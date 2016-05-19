@@ -103,7 +103,7 @@
                       <div class="clearfix"></div>
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Nível de acesso</label>
-                        <input class="form-control" id="inputnivel" name="inputnivel" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputnivel" name="inputnivel" placeholder="" type="text" required="Preencha este campo" maxlength="1"/>
                       </div>
                       <div class="clearfix"></div>
                     </div>

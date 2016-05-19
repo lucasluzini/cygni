@@ -52,7 +52,7 @@
                           <option>Selecione</option>
 
                           <?php
-                          $result = pg_query ($conexao , "select * from predio;");
+                          $result = pg_query ($conexao , "select * from predio order by nome;");
                               while ($row=pg_fetch_row($result)) {
                                 echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
                               }
@@ -68,7 +68,7 @@
                           <option>Selecione</option>
 
                           <?php
-                          $result = pg_query ($conexao , "select * from departamento;");
+                          $result = pg_query ($conexao , "select * from departamento order by sigla;");
                               while ($row=pg_fetch_row($result)) {
                                 echo "<option value=\"".$row[0]."\">".$row[0]." - ".$row[1]."</option>";
                               }

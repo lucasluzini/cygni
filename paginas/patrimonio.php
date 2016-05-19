@@ -76,7 +76,7 @@
                         <select class="form-control"id="selectcategoria" name="selectcategoria" required="Preencha este campo">
                           <option>Selecione</option>
                           <?php
-                          $result = pg_query ($conexao , "select * from categoria;");
+                          $result = pg_query ($conexao , "select * from categoria order by nome;");
                               while ($row=pg_fetch_row($result)) {
                                 echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
                               }

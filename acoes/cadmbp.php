@@ -46,10 +46,12 @@
 
                     $result = pg_query ($conexao , $sql);
 
-
                     if (pg_affected_rows($result)!=0){
 
                       echo "<h2>Movimentação incluída com sucesso</h2>";
+
+                      $sql = "UPDATE bempatrimonial SET numsala = ".$selectsaladestino." WHERE numero = ".$inputnumbem;
+                      pg_query ($conexao , $sql);
                     }else{
 
                       echo "<h2>Movimentação NÃO incluída</h2>";
