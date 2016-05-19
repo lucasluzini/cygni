@@ -88,9 +88,9 @@
                         <select class="form-control"id="selectsala" name="selectsala" required="Preencha este campo">
                           <option>Selecione</option>
                           <?php
-                          $result = pg_query ($conexao , "select * from sala;");
+                          $result = pg_query ($conexao , "select s.numero, s.sigladpto, p.nome from sala s inner join predio p on s.codpredio=p.codigo order by p.nome;");
                               while ($row=pg_fetch_row($result)) {
-                                echo "<option value=\"".$row[0]."\">".$row[0]." - ".$row[4]."</option>";
+                                echo "<option value=\"".$row[0]."\">".$row[2]." - ".$row[1]."</option>";
                               }
                           ?>
                         </select>

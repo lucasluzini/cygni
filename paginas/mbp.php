@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro de Sala</title>
+    <title>Cadastro de MBP</title>
 
     <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
@@ -25,36 +25,45 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Cadastro de sala</p>
+            <p class="well lead">Inserir movimentação de bem patrimônial</p>
 
             <div class="container">
               <div class="row">
 
                 <div class="col-sm-8 contact-form"> 
-                  <form id="contact" method="post" class="form" role="form" action="../acoes/cadsala.php">
+                  <form id="contact" method="post" class="form" role="form" action="../acoes/cadmbp.php">
                     <div class="row">
                       <div class="col-xs-4 col-md-6 form-group">
-                        <label for="Nome">Comprimento</label>
-                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="number" step="0.01" required="Preencha este campo"/>
+                        <label for="Nome">Data</label>
+                        <input class="form-control" id="inputdata" name="inputdata" placeholder="" type="date" required="Preencha este campo"/>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="col-xs-4 col-md-6 form-group">
-                        <label for="Nome">Largura</label>
-                        <input class="form-control" id="inputlargura" name="inputlargura" placeholder="" type="number" step="0.01" required="Preencha este campo"/>
+
+
+
+                    <div class="col-xs-4 col-md-6 form-group">
+                        <label for="Nome">Login</label>
+                        <input class="form-control" id="inputlogin" name="inputlogin" placeholder="" type="text" required="Preencha este campo"/>
                       </div>
-                    </div> 
-                    <div class="clearfix"></div>
+                      <div class="clearfix"></div>
+
+                    <div class="col-xs-4 col-md-6 form-group">
+                        <label for="Nome">Número do patrimônio</label>
+                        <input class="form-control" id="inputnumbem" name="inputnumbem" placeholder="" type="text" required="Preencha este campo"/>
+                      </div>
+                      <div class="clearfix"></div>
+
 
                     <div class="row">
                       <div class="col-xs-6 col-md-6 form-group">
-                        <label for="Nome">Código do prédio</label>
-                        <select class="form-control" id="selectpredio" name="selectpredio" required="required">
+                        <label for="Nome">Sala de origem</label>
+                        <select class="form-control" id="selectsalaorigem" name="selectsalaorigem" required="required">
                           <option>Selecione</option>
 
                           <?php
-                          $result = pg_query ($conexao , "select * from predio;");
+                          $result = pg_query ($conexao , "select s.numero, s.sigladpto, p.nome from sala s inner join predio p on s.codpredio=p.codigo order by p.nome;");
                               while ($row=pg_fetch_row($result)) {
-                                echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
+                                echo "<option value=\"".$row[0]."\">".$row[2]." - ".$row[1]."</option>";
                               }
                           ?>
 
@@ -63,14 +72,14 @@
                       <div class="clearfix"></div>
 
                       <div class="col-xs-4 col-md-6 form-group">
-                        <label for="Nome">Sigla do departamento</label>
-                        <select class="form-control" id="selectdepartamento" name="selectdepartamento" required="required">
+                        <label for="Nome">Sala de destino</label>
+                        <select class="form-control" id="selectsaladestino" name="selectsaladestino" required="required">
                           <option>Selecione</option>
 
                           <?php
-                          $result = pg_query ($conexao , "select * from departamento;");
+                          $result = pg_query ($conexao , "select s.numero, s.sigladpto, p.nome from sala s inner join predio p on s.codpredio=p.codigo order by p.nome;");
                               while ($row=pg_fetch_row($result)) {
-                                echo "<option value=\"".$row[0]."\">".$row[0]." - ".$row[1]."</option>";
+                                echo "<option value=\"".$row[0]."\">".$row[2]." - ".$row[1]."</option>";
                               }
                           ?>
 

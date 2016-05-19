@@ -55,3 +55,12 @@ git config --global credential.helper 'cache --timeout=28800'
 
 	SALVA USUARIO E SENHA PERMANENTE:
 git config --global credential.helper cache
+
+
+
+
+
+
+
+
+cd /var/www/lzni.com.br/public_html/cygni/
