@@ -1,3 +1,5 @@
+<?php require "../acoes/verifica.php"; ?>
+
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -14,7 +16,7 @@
   </head>
   <body>
 
-    <?php include_once("../paginas/menu.html"); ?>
+    <?php include_once("../paginas/menu.php"); ?>
 
 
     
@@ -25,7 +27,21 @@
         <div class="row">
           <div class="col-md-12">
             <p class="well lead">Cygni - Controle de Patrimônio</p>
-          </div>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-sm-8 contact-form"> 
+
+                  <div class="row">
+
+ 
+          <?php
+
+          echo "<h2> Bem vindo ".$_SESSION["nome"]." ao CYGNI. <br><br>";
+
+          ?>
+
+          </div></div></div></div></div>
 
           <div class="col-md-12">
             <p class="well lead">Progração para Internet - Si5N - Senac</p> 

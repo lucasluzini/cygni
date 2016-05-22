@@ -1,0 +1,25 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Relatório de patrimônios</title>
+
+   
+
+  </head>
+  <body>
+
+
+<form style="display: inline-block;" >
+<button type="submit" class="btn btn-info btn-xs">MBP</button>
+</form>
+<a> </a>
+<form style="display: inline-block;">
+<button type="submit" class="btn btn-warning btn-xs">Editar</button>
+</form>
+
+</body>
+</html>

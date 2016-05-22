@@ -1,3 +1,4 @@
+<?php require "../acoes/verifica.php"; ?>
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -14,7 +15,7 @@
   </head>
   <body>
 
-    <?php  include_once("../paginas/menu.html"); ?>
+    <?php  include_once("../paginas/menu.php"); ?>
 
     <div id="page-content-wrapper">
 

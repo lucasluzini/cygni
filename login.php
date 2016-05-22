@@ -18,19 +18,13 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
 
 
-
-
-
-
-
-
-
-
         <!-- CSS code from Bootply.com editor -->
         
         <style type="text/css">
             .modal-footer {   border-top: 0px; }
         </style>
+
+
     </head>
     
     <!-- HTML code from Bootply.com editor -->
@@ -46,22 +40,25 @@
 				  <h3 class="text-center">CYGNI</h3>
 			  </div>
 			  <div class="modal-body">
-				  <form class="form col-md-12 center-block" action="index.php" >
+				  <form class="form col-md-12 center-block" method="POST" action="acoes/logar.php">
+
 					<div class="form-group">
-					  <input type="text" class="form-control input-lg" placeholder="Usuário">
+					  <input name="login" id="login" type="text" class="form-control input-lg" placeholder="Usuário">
 					</div>
+
 					<div class="form-group">
-					  <input type="password" class="form-control input-lg" placeholder="Password">
+					  <input name="password" id="password" type="password" class="form-control input-lg" placeholder="Senha">
 					</div>
+
 					<div class="form-group">
-					  <button class="btn btn-primary btn-lg btn-block">Entrar</button>
+					  <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
 					 
 					</div>
 				  </form>
 			  </div>
 			  <div class="modal-footer">
 				  <div class="col-md-12">
-				  <button type="resert" class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+				  
 				  </div>	
 			  </div>
 		  </div>

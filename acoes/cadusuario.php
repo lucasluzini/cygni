@@ -1,3 +1,4 @@
+<?php require "../acoes/verifica.php"; ?>
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -14,7 +15,7 @@
   </head>
   <body>
 
-    <?php  include_once("../paginas/menu.html"); ?>
+    <?php  include_once("../paginas/menu.php"); ?>
 
     <div id="page-content-wrapper">
 
@@ -39,8 +40,8 @@
                     $inputnome=$_POST['inputnome'];
                     $inputsenha=$_POST['inputsenha'];
                     $inputconfsenha=$_POST['inputconfsenha'];
-                    $inputnivel=$_POST['inputnivel'];
-                    $sql = "insert into usuario(login, nome, senha, nivel) values ('".$inputlogin."', '".$inputnome."', '".md5($inputsenha)."', '".$inputnivel."')";
+                    $selectnivel=$_POST['selectnivel'];
+                    $sql = "insert into usuario(login, nome, senha, nivel) values ('".$inputlogin."', '".$inputnome."', '".md5($inputsenha)."', '".$selectnivel."')";
 
 
                     if($inputnome=!$inputconfsenha){

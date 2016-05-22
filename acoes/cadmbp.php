@@ -1,3 +1,4 @@
+<?php require "../acoes/verifica.php"; ?>
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -14,7 +15,7 @@
   </head>
   <body>
 
-    <?php  include_once("../paginas/menu.html"); ?>
+    <?php  include_once("../paginas/menu.php"); ?>
 
     <div id="page-content-wrapper">
 
@@ -40,7 +41,7 @@
                     $inputhiddennumbem=$_POST['inputhiddennumbem'];
                     $inputhiddensalaorigem=$_POST['inputhiddensalaorigem'];
                     $data = date('Y-m-d');
-                    $inputlogin="lzni";
+                    $inputlogin=$_SESSION["login"];
                     $selectsaladestino=$_POST['selectsaladestino'];
 
 
@@ -72,7 +73,8 @@
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
-                        <a class="btn btn-primary" href="JavaScript: window.history.back();">Voltar</a>
+                        <!-- <a class="btn btn-primary" href="JavaScript: window.history.back();">Voltar</a> -->
+                        <a class="btn btn-primary" href="../paginas/relbem.php">Voltar</a>
                       </div>
                     </div>
                   </form>

@@ -1,3 +1,4 @@
+<?php require "../acoes/verifica.php"; ?>
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -14,9 +15,8 @@
   </head>
   <body>
 
-    <?php  include_once("../paginas/menu.html"); ?>
+    <?php  include_once("../paginas/menu.php"); ?>
     <?php include_once("../acoes/connect.php"); ?>
-
 
 
 
@@ -74,7 +74,7 @@
                           <th>Número</th>
                           <th>Descrição</th>
                           <th>Situação</th>
-                          <th class=\"actions\">Ações</th>
+                          <th>Ações</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -110,17 +110,27 @@
               };
 
               echo"</td>";
-              echo "<td class=\"actions\">";
+              echo "<td>";
               //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
               //echo "<a>  </a>";
               //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
-
-              echo "<form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../acoes/mbppatrimonio.php\">";
+              
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
                 echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
                 echo $row[0];
                 echo "\"/>";
               echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
               echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
+              echo "</form>";
+         
 
               //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
               //echo "<a>  </a>";
@@ -232,11 +242,20 @@
               //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
               //echo "<a>  </a>";
               //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
-              echo "<form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../acoes/mbppatrimonio.php\">";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
                 echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
                 echo $row[0];
                 echo "\"/>";
               echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
               echo "</form>";
               //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
               //echo "<a>  </a>";
@@ -357,11 +376,20 @@
               //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
               //echo "<a>  </a>";
               //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
-              echo "<form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../acoes/mbppatrimonio.php\">";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
                 echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
                 echo $row[0];
                 echo "\"/>";
               echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
               echo "</form>";
               //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
               //echo "<a>  </a>";
@@ -474,11 +502,20 @@
               //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
               //echo "<a>  </a>";
               //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
-              echo "<form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../acoes/mbppatrimonio.php\">";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
                 echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
                 echo $row[0];
                 echo "\"/>";
               echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
               echo "</form>";
               //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
               //echo "<a>  </a>";
@@ -503,14 +540,6 @@
 
 
           ?>
-
-
-
-
-
-
-
-
 
 
 

@@ -1,3 +1,4 @@
+<?php require "../acoes/verifica.php"; ?>
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -62,7 +63,7 @@
   </head>
   <body>
 
-    <?php include_once("../paginas/menu.html"); ?>
+    <?php include_once("../paginas/menu.php"); ?>
 
 
     
@@ -101,9 +102,13 @@
                         <span id="confirmMessage" class="confirmMessage"></span>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="col-xs-6 col-md-6 form-group">
-                        <label for="Nome">Nível de acesso</label>
-                        <input class="form-control" id="inputnivel" name="inputnivel" placeholder="" type="text" required="Preencha este campo" maxlength="1"/>
+                      <div class="col-xs-4 col-md-6 form-group">
+                        <label for="Nome">Nivel de acesso</label>
+                        <select class="form-control"id="selectnivel" name="selectnivel" required="Preencha este campo">
+                          <option>Selecione</option>
+                          <option value="g">Gerente</option>
+                          <option value="f">Funcionário</option>
+                        </select>
                       </div>
                       <div class="clearfix"></div>
                     </div>

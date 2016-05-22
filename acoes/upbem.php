@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro de patrimônio</title>
+    <title>Atualizar patrimônio</title>
 
     <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
@@ -17,12 +17,14 @@
 
     <?php  include_once("../paginas/menu.php"); ?>
 
+    <?php $inputnumbem=$_POST['inputnumbem']; ?>
+
     <div id="page-content-wrapper">
 
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Cadastro de patrimônio</p>
+            <p class="well lead">Atualizar patrimônio: <?php echo $inputnumbem; ?></p>
 
             <div class="container">
               <div class="row">
@@ -36,6 +38,7 @@
 
                     include_once("../acoes/connect.php");
 
+
                     $inputdescricao=$_POST['inputdescricao'];
                     $inputnumeronotafiscal=$_POST['inputnumeronotafiscal'];
                     $inputdatanotafiscal=$_POST['inputdatanotafiscal'];
@@ -43,9 +46,9 @@
                     $inputvalor=$_POST['inputvalor'];
                     $selectsituacao=$_POST['selectsituacao'];
                     $selectcategoria=$_POST['selectcategoria'];
-                    $selectsala=$_POST['selectsala'];
 
-                    $sql = "insert into bempatrimonial(descricao, nrnotafiscal, dtnotafiscal, fornecedor, valor, situacao, codcat, numsala) values ('".$inputdescricao."', ".$inputnumeronotafiscal.", '".$inputdatanotafiscal."', '".$inputfornecedor."', ".$inputvalor.", '".$selectsituacao."', ".$selectcategoria.", ".$selectsala.")";
+
+                    $sql = "UPDATE bempatrimonial SET descricao='".$inputdescricao."', nrnotafiscal=".$inputnumeronotafiscal.", dtnotafiscal='".$inputdatanotafiscal."', fornecedor='".$inputfornecedor."', valor=".$inputvalor.", situacao='".$selectsituacao."', codcat=".$selectcategoria." WHERE numero=".$inputnumbem;
 
 
                     $result = pg_query ($conexao , $sql);
@@ -53,10 +56,10 @@
 
                     if (pg_affected_rows($result)!=0){
 
-                      echo "<h2>Patrimônio incluído com sucesso</h2>";
+                      echo "<h2>Patrimônio atualizado com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Patrimônio NÃO incluído</h2>";
+                      echo "<h2>Patrimônio NÃO atualizado</h2>";
                     }
 
                     pg_close($conexao);
@@ -67,7 +70,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/patrimonio.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/relbem.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
@@ -76,9 +79,12 @@
                     </div>
                   </form>
 
+
+
                 </div>
               </div>
             </div>
+
             <p class="well lead">Progração para Internet - Si5N - Senac</p> 
           </div>
         </div>
