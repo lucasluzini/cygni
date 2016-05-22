@@ -1,0 +1,30 @@
+                      <div class="col-xs-4 col-md-4 form-group">
+                        <label for="Nome">Situação</label>
+                        <select class="form-control" id="selectsituacao" name="selectsituacao" required="Preencha este campo" />
+                          <?php 
+                            switch($row[6]){
+
+                              case 'e':
+                                echo "<option value=\"e\">Em uso</option>";
+                                echo "<option value=\"m\">Manutenção</option>";
+                                echo "<option value=\"i\">Inutilizado</option>";
+                              break;
+
+                              case 'm':
+                                echo "<option value=\"m\">Manutenção</option>";
+                                echo "<option value=\"e\">Em uso</option>";
+                                echo "<option value=\"i\">Inutilizado</option>";
+                              break;
+
+                              case 'i':
+                                echo "<option value=\"i\">Inutilizado</option>";
+                                echo "<option value=\"e\">Em uso</option>";
+                                echo "<option value=\"m\">Manutenção</option>";
+                              break;
+
+
+                            };
+                          ?>
+
+                        </select>
+                      </div>
