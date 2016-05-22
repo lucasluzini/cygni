@@ -16,24 +16,57 @@
     function opensala() {
       document.getElementById('divsala').style.display="block";
       document.getElementById('divpredio').style.display="none";
-      document.getElementById('divsituacao').style.display="none";
       document.getElementById('selectpredio').value = "Selecione";
+
+      document.getElementById('divsituacao').style.display="none";      
       document.getElementById('selectsituacao').value = "Selecione";
+
+      document.getElementById('divnumero').style.display="none";
+      document.getElementById('inputnumero').value = "";
     }
+
+
     function openpredio() {
       document.getElementById('divpredio').style.display="block";
+
       document.getElementById('divsala').style.display="none";
       document.getElementById('selectsala').value = "Selecione";
+
       document.getElementById('divsituacao').style.display="none";
       document.getElementById('selectsituacao').value = "Selecione";
+
+      document.getElementById('divnumero').style.display="none";
+      document.getElementById('inputnumero').value = "";
     }
+
+
     function opensituacao() {
       document.getElementById('divsituacao').style.display="block";
+
       document.getElementById('divsala').style.display="none";
       document.getElementById('selectsala').value = "Selecione";
+
       document.getElementById('divpredio').style.display="none";
       document.getElementById('selectpredio').value = "Selecione";
+
+      document.getElementById('divnumero').style.display="none";
+      document.getElementById('inputnumero').value = "";
     }
+
+
+    function opennumero() {
+      document.getElementById('divnumero').style.display="block";
+
+      document.getElementById('divsala').style.display="none";
+      document.getElementById('selectsala').value = "Selecione";
+
+      document.getElementById('divpredio').style.display="none";
+      document.getElementById('selectpredio').value = "Selecione";
+
+      document.getElementById('divsituacao').style.display="none";      
+      document.getElementById('selectsituacao').value = "Selecione";
+    }
+
 
     </script>
     
@@ -77,6 +110,10 @@
 
                     <div class="col-xs-4 col-md-2 form-group">
                     <input name="rdlistarbem" id="rdsituacao" type="radio" value="situacao" onclick="opensituacao();"/>Situação
+                    </div>
+                    
+                    <div class="col-xs-4 col-md-2 form-group">
+                    <input name="rdlistarbem" id="rdnumero" type="radio" value="numero" onclick="opennumero();"/>Número
                     </div>
                     <div class="clearfix"></div>
 
@@ -126,13 +163,25 @@
                         <label for="Nome">Escolha a situação</label>
                         <select class="form-control"id="selectsituacao" name="selectsituacao" required="Preencha este campo">
                           <option value="Selecione">Selecione</option>
-                          <option value="1">Em uso</option>
-                          <option value="2">Manutenção</option>
-                          <option value="3">Inutilizado</option>
+                          <option value="e">Em uso</option>
+                          <option value="m">Manutenção</option>
+                          <option value="i">Inutilizado</option>
                         </select>
                       </div>
                       <div class="clearfix"></div>
                       </div>
+
+
+
+
+                      <div id="divnumero" style="display: none;">
+                      <div class="col-xs-4 col-md-6 form-group">
+                          <label for="Nome">Digite o número</label>
+                          <input class="form-control" id="inputnumero" name="inputnumero" type="number">
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+
 
 
                    

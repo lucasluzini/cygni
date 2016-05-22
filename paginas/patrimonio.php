@@ -66,9 +66,9 @@
                         <label for="Nome">Situação</label>
                         <select class="form-control"id="selectsituacao" name="selectsituacao" required="Preencha este campo">
                           <option>Selecione</option>
-                          <option value="1">Em uso</option>
-                          <option value="2">Manutenção</option>
-                          <option value="3">Inutilizado</option>
+                          <option value="e">Em uso</option>
+                          <option value="m">Manutenção</option>
+                          <option value="i">Inutilizado</option>
                         </select>
                       </div>
                       <div class="col-xs-4 col-md-6 form-group">

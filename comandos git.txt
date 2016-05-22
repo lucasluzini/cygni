@@ -58,9 +58,4 @@ git config --global credential.helper cache
 
 
 
-
-
-
-
-
-cd /var/www/lzni.com.br/public_html/cygni/
+cd /var/www/lzni.com.br/public_html/cygni

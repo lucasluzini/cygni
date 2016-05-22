@@ -35,13 +35,16 @@
 
                     include_once("../acoes/connect.php");
 
-                    $inputdata=$_POST['inputdata'];
-                    $inputlogin=$_POST['inputlogin'];
-                    $inputnumbem=$_POST['inputnumbem'];
-                    $selectsalaorigem=$_POST['selectsalaorigem'];
+                    
+
+                    $inputhiddennumbem=$_POST['inputhiddennumbem'];
+                    $inputhiddensalaorigem=$_POST['inputhiddensalaorigem'];
+                    $data = date('Y-m-d');
+                    $inputlogin="lzni";
                     $selectsaladestino=$_POST['selectsaladestino'];
 
-                    $sql = "insert into mbp(data, login, numbem, numsalaorigem, numsaladestino) values ('".$inputdata."', '".$inputlogin."', ".$inputnumbem.", ".$selectsalaorigem.", ".$selectsaladestino.")";
+
+                    $sql = "insert into mbp(data, login, numbem, numsalaorigem, numsaladestino) values ('".$data."', '".$inputlogin."', ".$inputhiddennumbem.", ".$inputhiddensalaorigem.", ".$selectsaladestino.")";
 
 
                     $result = pg_query ($conexao , $sql);
@@ -50,7 +53,7 @@
 
                       echo "<h2>Movimentação incluída com sucesso</h2>";
 
-                      $sql = "UPDATE bempatrimonial SET numsala = ".$selectsaladestino." WHERE numero = ".$inputnumbem;
+                      $sql = "UPDATE bempatrimonial SET numsala = ".$selectsaladestino." WHERE numero = ".$inputhiddennumbem;
                       pg_query ($conexao , $sql);
                     }else{
 
@@ -69,7 +72,7 @@
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
-                        <button class="btn btn-primary" type="submit">Voltar</button>
+                        <a class="btn btn-primary" href="JavaScript: window.history.back();">Voltar</a>
                       </div>
                     </div>
                   </form>
