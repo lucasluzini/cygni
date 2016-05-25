@@ -12,69 +12,10 @@
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
     <link href="../arquivos/css/3.css" rel="stylesheet">
 
-      <script language="javascript">
-
-    function opensala() {
-      document.getElementById('divsala').style.display="block";
-      document.getElementById('divpredio').style.display="none";
-      document.getElementById('selectpredio').value = "Selecione";
-
-      document.getElementById('divsituacao').style.display="none";      
-      document.getElementById('selectsituacao').value = "Selecione";
-
-      document.getElementById('divnumero').style.display="none";
-      document.getElementById('inputnumero').value = "";
-    }
-
-
-    function openpredio() {
-      document.getElementById('divpredio').style.display="block";
-
-      document.getElementById('divsala').style.display="none";
-      document.getElementById('selectsala').value = "Selecione";
-
-      document.getElementById('divsituacao').style.display="none";
-      document.getElementById('selectsituacao').value = "Selecione";
-
-      document.getElementById('divnumero').style.display="none";
-      document.getElementById('inputnumero').value = "";
-    }
-
-
-    function opensituacao() {
-      document.getElementById('divsituacao').style.display="block";
-
-      document.getElementById('divsala').style.display="none";
-      document.getElementById('selectsala').value = "Selecione";
-
-      document.getElementById('divpredio').style.display="none";
-      document.getElementById('selectpredio').value = "Selecione";
-
-      document.getElementById('divnumero').style.display="none";
-      document.getElementById('inputnumero').value = "";
-    }
-
-
-    function opennumero() {
-      document.getElementById('divnumero').style.display="block";
-
-      document.getElementById('divsala').style.display="none";
-      document.getElementById('selectsala').value = "Selecione";
-
-      document.getElementById('divpredio').style.display="none";
-      document.getElementById('selectpredio').value = "Selecione";
-
-      document.getElementById('divsituacao').style.display="none";      
-      document.getElementById('selectsituacao').value = "Selecione";
-    }
-
-
-    </script>
-    
   </head>
   <body>
 
-    <?php include_once("../paginas/menu.php"); ?>
+    <?php  include_once("../paginas/menu.php"); ?>
     <?php include_once("../acoes/connect.php"); ?>
 
 
@@ -84,142 +25,617 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Relatório de patrimônios</p>
 
-            <div class="container">
-              <div class="row"> 
 
-                <div class="col-sm-8 contact-form">
-                  <form id="contact" method="post" class="form" role="form" action="../acoes/relbem.php">
+           <?php
 
+           $rdlistarbem=$_POST['rdlistarbem'];
+
+
+           switch ($rdlistarbem){
+
+
+
+
+
+
+
+
+
+            case 'sala':
+
+            $selectsala=$_POST['selectsala'];
+
+            $row=pg_fetch_row(pg_query ($conexao , "SELECT s.sigladpto, p.nome 
+              FROM sala s 
+              INNER JOIN predio p 
+              ON s.codpredio=p.codigo 
+              WHERE s.numero=".$selectsala));
+
+
+
+            echo "<p class=\"well lead\">Lista de patrimônio da sala: ".$row[0]." - Unidade ".$row[1]."</p>";
+
+            print("      
+              <div class=\"container\">
+                <div id=\"main\" class=\"container-fluid\">
+                 <div id=\"list\" class=\"row\">
+                        <form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../paginas/relbem.php\">
+                          <div class=\"row\">
+                            <div class=\"col-xs-12 col-md-12 form-group\">
+                              <button class=\"btn btn-primary\" type=\"submit\">Voltar</button>
+                            </div>
+                          </div>
+                        </form>
+                   <div class=\"table-responsive col-md-12\">
+                    <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                      <thead>
+                        <tr>
+                          <th>Número</th>
+                          <th>Descrição</th>
+                          <th>Situação</th>
+                          <th>Ações</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        ");
+
+                        //$sql = "select * from sala";
+            $sql = "SELECT b.numero, b.descricao, b.situacao 
+            FROM bempatrimonial b 
+            INNER JOIN sala s 
+            ON b.numsala = s.numero
+            WHERE s.numero=".$selectsala;
+            $result = pg_query ($conexao , $sql);
+
+
+
+            while ($row=pg_fetch_row($result)) {
+              echo "<tr>";
+              echo "<td>".$row[0]."</td>";
+              echo "<td>".$row[1]."</td>";
+              echo "<td>";
+
+              switch($row[2]){
+                case 'e':
+                echo "Em Uso";
+                break;
+                case 'm':
+                echo "Em Manutenção";
+                break;
+                case 'i':
+                echo "Inutilizado";
+                break;
+              };
+
+              echo"</td>";
+              echo "<td>";
+              //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
               
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
 
-                    <div class="col-xs-4 col-md-6 form-group">
-                    <label>Listar itens por: </label>
-                    </div>
-                    <div class="clearfix"></div>
+              echo "<a>  </a>";
 
-                    <div class="row">
-
-                    <div class="col-xs-4 col-md-2 form-group">
-                    <input name="rdlistarbem" id="rdsala" type="radio" value="sala" onclick="opensala();"/>Sala
-                    </div>
-
-                    <div class="col-xs-4 col-md-2 form-group">
-                    <input name="rdlistarbem" id="rdpredio" type="radio" value="predio" onclick="openpredio();"/>Prédio
-                    </div>
-
-                    <div class="col-xs-4 col-md-2 form-group">
-                    <input name="rdlistarbem" id="rdsituacao" type="radio" value="situacao" onclick="opensituacao();"/>Situação
-                    </div>
-                    
-                    <div class="col-xs-4 col-md-2 form-group">
-                    <input name="rdlistarbem" id="rdnumero" type="radio" value="numero" onclick="opennumero();"/>Número
-                    </div>
-                    <div class="clearfix"></div>
-
-
-                    <br>
-
-
-
-                    <div id="divsala" style="display:none;">
-                      <div class="col-xs-4 col-md-6 form-group">
-                        <label for="Nome">Escolha a sala</label>
-                        <select class="form-control"id="selectsala" name="selectsala" required="Preencha este campo">
-                          <option value="Selecione">Selecione</option>
-                          <?php
-                          $result = pg_query ($conexao , "select s.numero, s.sigladpto, p.nome from sala s inner join predio p on s.codpredio=p.codigo order by p.nome;");
-                              while ($row=pg_fetch_row($result)) {
-                                echo "<option value=\"".$row[0]."\">".$row[2]." - ".$row[1]."</option>";
-                              }
-                          ?>
-                        </select>
-                      </div>
-                      <div class="clearfix"></div>
-                      </div>
-
-              
-                      <div id="divpredio" style="display:none;">
-                      <div class="col-xs-6 col-md-6 form-group">
-                        <label for="Nome">Escolha o prédio</label>
-                        <select class="form-control" id="selectpredio" name="selectpredio" required="required">
-                          <option value="Selecione">Selecione</option>
-
-                          <?php
-                          $result = pg_query ($conexao , "select * from predio order by nome;");
-                              while ($row=pg_fetch_row($result)) {
-                                echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
-                              }
-                          ?>
-
-                        </select>
-                      </div>
-                      <div class="clearfix"></div>
-                      </div>
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
+              echo "</form>";
+			
+			 echo "<a>  </a>";
+			
+			 echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Excluir</button>";
+              echo "</form>";
+              //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-danger btn-xs\"  href=\"#\" data-toggle=\"modal\" data-target=\"#delete-modal\">Excluir</a>";
+              echo "</td>";
+              echo "</tr>";
+            };
 
 
-                      <div id="divsituacao" style="display:none;">
-                      <div class="col-xs-4 col-md-6 form-group">
-                        <label for="Nome">Escolha a situação</label>
-                        <select class="form-control"id="selectsituacao" name="selectsituacao" required="Preencha este campo">
-                          <option value="Selecione">Selecione</option>
-                          <option value="e">Em uso</option>
-                          <option value="m">Manutenção</option>
-                          <option value="i">Inutilizado</option>
-                        </select>
-                      </div>
-                      <div class="clearfix"></div>
-                      </div>
+
+            break;
 
 
 
 
-                      <div id="divnumero" style="display: none;">
-                      <div class="col-xs-4 col-md-6 form-group">
-                          <label for="Nome">Digite o número</label>
-                          <input class="form-control" id="inputnumero" name="inputnumero" type="number">
-                      </div>
-                      <div class="clearfix"></div>
-                      </div>
 
 
 
-                   
 
-                    </div>
-                    <br />
-                    
-                    <div class="row">
-                      <div class="col-xs-12 col-md-12 form-group">
-                        <button class="btn btn-primary" type="submit">Listar</button>
-                        <!-- <button class="btn btn-primary" type="submit">Limpar</button> -->
- 
-                      </div>
-                    </div>
-                  </form>
-                </div> 
-              </div> 
-            </div>
-            <p class="well lead">Progração para Internet - Si5N - Senac</p> 
+
+
+
+
+
+
+
+
+
+            case 'predio':
+
+
+            $selectpredio=$_POST['selectpredio'];
+
+            $row=pg_fetch_row(pg_query ($conexao , "SELECT nome 
+              FROM predio
+              WHERE codigo=".$selectpredio));
+
+
+
+            echo "<p class=\"well lead\">Lista de patrimônio do prédio: ".$row[0]."</p>";
+
+            print("      <div class=\"container\">
+
+              <div id=\"main\" class=\"container-fluid\">
+
+
+
+               <div id=\"list\" class=\"row\">
+                        <form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../paginas/relbem.php\">
+                          <div class=\"row\">
+                            <div class=\"col-xs-12 col-md-12 form-group\">
+                              <button class=\"btn btn-primary\" type=\"submit\">Voltar</button>
+                            </div>
+                          </div>
+                        </form>
+                 <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                      <tr>
+                        <th>Número</th>
+                        <th>Descrição</th>
+                        <th>Situação</th>
+                        <th>Sigla do Departamento</th>
+                        <th class=\"actions\">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      ");
+
+
+
+                        //$sql = "select * from sala";
+            $sql = "SELECT b.numero, b.descricao, b.situacao, d.nome 
+            FROM bempatrimonial b 
+            INNER JOIN sala s 
+            ON b.numsala = s.numero 
+            INNER JOIN departamento d 
+            ON s.sigladpto = d.sigla
+            INNER JOIN predio p
+            ON s.codpredio = p.codigo
+            WHERE p.codigo=".$selectpredio."
+            ORDER BY b.codcat";
+            $result = pg_query ($conexao , $sql);
+
+
+
+            while ($row=pg_fetch_row($result)) {
+              echo "<tr>";
+              echo "<td>".$row[0]."</td>";
+              echo "<td>".$row[1]."</td>";
+              echo "<td>";
+
+              switch($row[2]){
+                case 'e':
+                echo "Em Uso";
+                break;
+                case 'm':
+                echo "Em Manutenção";
+                break;
+                case 'i':
+                echo "Inutilizado";
+                break;
+              };
+
+              echo"</td>";
+              echo "<td>".$row[3]."</td>";
+              echo "<td class=\"actions\">";
+              //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
+              echo "</form>";
+			  
+			   echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Excluir</button>";
+              echo "</form>";
+              //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-danger btn-xs\"  href=\"#\" data-toggle=\"modal\" data-target=\"#delete-modal\">Excluir</a>";
+              echo "</td>";
+              echo "</tr>";
+            };
+
+
+
+
+            break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            case 'situacao':
+
+
+
+            $selectsituacao=$_POST['selectsituacao'];
+
+
+            echo "<p class=\"well lead\">Lista de patrimônio: ";
+
+            switch($selectsituacao){
+              case 'e':
+              echo "Em Uso";
+              break;
+              case 'm':
+              echo "Em Manutenção";
+              break;
+              case 'i':
+              echo "Inutilizado";
+              break;
+            };
+            echo "</p>";
+
+            print("      <div class=\"container\">
+
+              <div id=\"main\" class=\"container-fluid\">
+
+
+
+               <div id=\"list\" class=\"row\">
+                        <form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../paginas/relbem.php\">
+                          <div class=\"row\">
+                            <div class=\"col-xs-12 col-md-12 form-group\">
+                              <button class=\"btn btn-primary\" type=\"submit\">Voltar</button>
+                            </div>
+                          </div>
+                        </form>
+                 <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                      <tr>
+                        <th>Número</th>
+                        <th>Descrição</th>
+                        <th>Situação</th>
+                        <th>Departamento</th>
+                        <th>Prédio</th>
+                        <th class=\"actions\">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      ");
+
+
+
+                        //$sql = "select * from sala";
+            $sql = "SELECT b.numero, b.descricao, b.situacao, d.nome, p.nome 
+            FROM bempatrimonial b 
+            INNER JOIN sala s 
+            ON b.numsala = s.numero 
+            INNER JOIN departamento d 
+            ON s.sigladpto = d.sigla
+            INNER JOIN predio p
+            ON s.codpredio = p.codigo
+            WHERE b.situacao='".$selectsituacao."' ORDER BY b.codcat";
+
+            $result = pg_query ($conexao , $sql);
+
+            while ($row=pg_fetch_row($result)) {
+              echo "<tr>";
+              echo "<td>".$row[0]."</td>";
+              echo "<td>".$row[1]."</td>";
+              echo "<td>";
+
+              switch($row[2]){
+                case 'e':
+                echo "Em Uso";
+                break;
+                case 'm':
+                echo "Em Manutenção";
+                break;
+                case 'i':
+                echo "Inutilizado";
+                break;
+              };
+
+              echo"</td>";
+              echo "<td>".$row[3]."</td>";
+              echo "<td>".$row[4]."</td>";
+              echo "<td class=\"actions\">";
+              //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
+              echo "</form>"; 
+			  
+			  echo "<a>  </a>";
+			  
+			   echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Excluir</button>";
+              echo "</form>";
+              //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-danger btn-xs\"  href=\"#\" data-toggle=\"modal\" data-target=\"#delete-modal\">Excluir</a>";
+              echo "</td>";
+              echo "</tr>";
+            };
+
+
+
+
+            break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            case 'numero':
+
+
+
+
+
+
+            $inputnumero=$_POST['inputnumero'];
+
+
+            echo "<p class=\"well lead\">Lista de patrimônio: ".$inputnumero."</p>";
+
+            print("      
+              <div class=\"container\">
+
+                <div id=\"main\" class=\"container-fluid\">
+
+
+
+               <div id=\"list\" class=\"row\">
+               <form id=\"contact\" method=\"post\" class=\"form\" role=\"form\" action=\"../paginas/relbem.php\">
+                          <div class=\"row\">
+                            <div class=\"col-xs-12 col-md-12 form-group\">
+                              <button class=\"btn btn-primary\" type=\"submit\">Voltar</button>
+                            </div>
+                          </div>
+                        </form>
+                 <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                      <tr>
+                        <th>Número</th>
+                        <th>Descrição</th>
+                        <th>Situação</th>
+                        <th>Departamento</th>
+                        <th>Prédio</th>
+                        <th class=\"actions\">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        ");
+
+                        //$sql = "select * from sala";
+           $sql = "SELECT b.numero, b.descricao, b.situacao, d.nome, p.nome 
+            FROM bempatrimonial b 
+            INNER JOIN sala s 
+            ON b.numsala = s.numero 
+            INNER JOIN departamento d 
+            ON s.sigladpto = d.sigla
+            INNER JOIN predio p
+            ON s.codpredio = p.codigo
+            WHERE b.numero=".$inputnumero;
+
+            $result = pg_query ($conexao , $sql);
+
+            while ($row=pg_fetch_row($result)) {
+              echo "<tr>";
+              echo "<td>".$row[0]."</td>";
+              echo "<td>".$row[1]."</td>";
+              echo "<td>";
+
+              switch($row[2]){
+                case 'e':
+                echo "Em Uso";
+                break;
+                case 'm':
+                echo "Em Manutenção";
+                break;
+                case 'i':
+                echo "Inutilizado";
+                break;
+              };
+
+              echo"</td>";
+              echo "<td>".$row[3]."</td>";
+              echo "<td>".$row[4]."</td>";
+              echo "<td class=\"actions\">";
+              //echo "<a class=\"btn btn-success btn-xs\" href=\"view.html\">Visualizar</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-warning btn-xs\" href=\"edit.html\">Editar</a>";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/mbppatrimonio.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-info btn-xs\" type=\"submit\">MBP</button>";
+              echo "</form>";
+
+              echo "<a>  </a>";
+
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/editbem.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Editar</button>";
+              echo "</form>";
+			  
+			   echo "<a>  </a>";
+			  
+			  echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/exluir.php\">";
+                echo "<input id=\"inputhidden\" name=\"inputhidden\" type=\"hidden\" value=\"";
+                echo $row[0];
+                echo "\"/>";
+              echo "<button class=\"btn btn-warning btn-xs\" type=\"submit\">Exluir</button>";
+              echo "</form>";
+              //echo "<a class=\"btn btn-info btn-xs\" href=\"edit.html\">MBP</a>";
+              //echo "<a>  </a>";
+              //echo "<a class=\"btn btn-danger btn-xs\"  href=\"#\" data-toggle=\"modal\" data-target=\"#delete-modal\">Excluir</a>";
+              echo "</td>";
+              echo "</tr>";
+            };
+
+          
+
+
+
+            break;
+			default :
+			
+			echo "<h1> Prencha uma das opcões </h1></br></br>";
+			
+			break;
+
+
+
+
+          };
+
+
+          ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </tbody>
+      </table>
+
+      
+
+
+    </div>
+
+    <form id="contact" method="post" class="form" role="form" action="../paginas/relbem.php">
+
+        <div class="row">
+          <div class="col-xs-12 col-md-12 form-group">
+            <button class="btn btn-primary" type="submit">Voltar</button>
           </div>
         </div>
-      </div>
-    </div>
-    
-  </div>
+      </form>
+
+  </div> <!-- /#list -->
 
 
+</div>  <!-- /#main -->
+
+</div>
+<p class="well lead">Progração para Internet - Si5N - Senac</p> 
+</div>
+</div>
+</div>
+</div>
+
+</div>
 
 
-
-
-  <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
-  <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../arquivos/js/menu.js"></script>
-  <script src="../arquivos/js/showride.js"></script>
-
-
+<script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
+<script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
+<script src="../arquivos/js/menu.js"></script>
+<script src="../arquivos/js/showride.js"></script>
 
 <?php pg_close($conexao); ?>
 </body>
