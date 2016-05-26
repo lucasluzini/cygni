@@ -1,4 +1,14 @@
-<?php require "../acoes/verifica.php"; ?>
+<?php 
+
+require "../acoes/verifica.php"; 
+
+if ($_SESSION["nivel"] == 'f') {
+
+  header("Location: ../paginas/index.php"); 
+  # code...
+};
+
+?>
   <!DOCTYPE html>
   <html lang="en">
   <head>

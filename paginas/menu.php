@@ -22,7 +22,12 @@
         <li><a href="../paginas/patrimonio.php">Patrimônio</a></li>
         <li><a href="../paginas/predio.php">Prédio</a></li>
         <li><a href="../paginas/sala.php">Sala</a></li>
-        <li><a href="../paginas/usuario.php">Usuário</a></li>
+        <?php 
+
+        if($_SESSION["nivel"] == 'g'){
+          echo "<li><a href=\"../paginas/usuario.php\">Usuário</a></li>";
+        }
+        ?>
       </ul>
     </ul>
     <ul class="sidebar-nav" id="sidebar">

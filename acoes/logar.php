@@ -76,7 +76,8 @@
                     // TUDO OK! Agora, passa os dados para a sessão e redireciona o usuário 
                         $_SESSION["login"]= $dados[0]; 
                         $_SESSION["nome"] = stripslashes($dados[1]); 
-                        $_SESSION["nivel"]= $dados[3]; 
+                        $_SESSION["nivel"]= $dados[3];
+                        
                         header("Location: ../paginas/index.php"); 
 
                       } 
