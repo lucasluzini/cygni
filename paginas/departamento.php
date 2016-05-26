@@ -143,7 +143,7 @@
 
               //echo "<a>  </a>";
 
-              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluidepartamento.php\">";
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluidepartamento.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o departamento?')\">";
                 echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
                 echo $linha[sigla];
                 echo "\"/>";
