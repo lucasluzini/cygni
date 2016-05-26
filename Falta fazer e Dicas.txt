@@ -1,0 +1,36 @@
+( ok ) Tirar paragrafo do final das paginas, e deixar somente na pagina inicial.
+
+( ) Implementar a exclusão dos itens.
+
+( ok ) Somente gerentes podem cadastrar Usuarios.
+
+( ) Validar maximo de caracteres nos formulários, não precisa ser por javascript, somente no input mesmo usando maxlength="9"
+	No arquivo Projeto Controle de Patrimônio.odt tem o tamanho dos caracteres onde descreve a estrutura do banco de dados.
+
+( ok ) Colocar explicito que Cygni é um programa que controla patrimonios
+
+
+obs:
+
+- A Lista de MBP é somente leitura, e não terá opção de editar e excluir.
+
+- A Tela de cadastro de patrimônio não terá a lista, porque a tendência é ser uma lista muito grande, e portanto, temos o relatorio de patrimonio, onde podemos filtar de várias formas. 
+
+- Para conseguir excluir os itens, temos que preocupar com as chaves estrangeiras. Ex: para excluir sala, temos que Usar a oção MBP, tirar o patrimonio da sala a ser excluida, e depois tentar excluir a sala.
+
+
+
+
+
+Dicas:
+
+Cada botão excluir/editar é um formulario, ex:
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluidepartamento.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o departamento?')\">";
+                echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+                echo $linha[sigla];
+                echo "\"/>";
+              echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+              echo "</form>";
+
+
+a pagina excluidepartamento.php vai receber iptexcluir com o post
