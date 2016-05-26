@@ -50,9 +50,11 @@
                       echo "<h2>Departamento excluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Departamento NÃO excluído</h2>";
+                      echo "<h2>Departamento NÃO excluído</h2><br><br>";
 
-    				  echo pg_last_error();;
+                      echo "<h4>Causa: </h4>";
+
+    				  echo pg_last_error();
                     }
 
                     pg_close($conexao);
