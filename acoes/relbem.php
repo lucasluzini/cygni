@@ -67,6 +67,11 @@
                             </div>
                           </div>
                         </form>
+
+<div class=\"container\">
+<div class=\"panel panel-primary\">
+<div class=\"panel-body\">
+
                    <div class=\"table-responsive col-md-12\">
                     <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
                       <thead>
@@ -186,6 +191,11 @@
                             </div>
                           </div>
                         </form>
+
+<div class=\"container\">
+<div class=\"panel panel-primary\">
+<div class=\"panel-body\">
+
                  <div class=\"table-responsive col-md-12\">
                   <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
                     <thead>
@@ -320,6 +330,11 @@
                             </div>
                           </div>
                         </form>
+
+<div class=\"container\">
+<div class=\"panel panel-primary\">
+<div class=\"panel-body\">
+
                  <div class=\"table-responsive col-md-12\">
                   <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
                     <thead>
@@ -448,6 +463,11 @@
                             </div>
                           </div>
                         </form>
+
+<div class=\"container\">
+<div class=\"panel panel-primary\">
+<div class=\"panel-body\">
+                        
                  <div class=\"table-responsive col-md-12\">
                   <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
                     <thead>
@@ -570,7 +590,7 @@
       
 
 
-    </div>
+    </div></div></div></div>
 
     <form id="contact" method="post" class="form" role="form" action="../paginas/relbem.php">
 
