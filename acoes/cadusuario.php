@@ -91,7 +91,9 @@ if ($_SESSION["nivel"] == 'f') {
                 </div>
               </div>
             </div>
+           <!--
             <p class="well lead">Progração para Internet - Si5N - Senac</p> 
+            -->
           </div>
         </div>
       </div>

@@ -84,7 +84,7 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Relatório de patrimônios</p>
+            <p class="well lead">Relatório de patrimônios - Cadastro de MBP</p>
 
             <div class="container">
               <div class="row"> 
@@ -201,7 +201,9 @@
                 </div> 
               </div> 
             </div>
+            <!--
             <p class="well lead">Progração para Internet - Si5N - Senac</p> 
+            --> 
           </div>
         </div>
       </div>

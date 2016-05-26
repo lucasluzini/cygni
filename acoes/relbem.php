@@ -587,7 +587,9 @@
 </div>  <!-- /#main -->
 
 </div>
-<p class="well lead">Progração para Internet - Si5N - Senac</p> 
+<!--
+            <p class="well lead">Progração para Internet - Si5N - Senac</p> 
+            -->
 </div>
 </div>
 </div>

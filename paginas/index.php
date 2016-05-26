@@ -37,9 +37,13 @@
  
           <?php
 
-          echo "<h2> Bem vindo ".$_SESSION["nome"]." ao CYGNI. <br><br>";
+          echo "<h2> Bem vindo ".$_SESSION["nome"]." ao CYGNI. <br><br></h2>";
 
           ?>
+
+          <br><br><br><br><br><br><br><br><br><br>
+
+
 
           </div></div></div></div></div>
 

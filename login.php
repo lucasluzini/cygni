@@ -8,14 +8,16 @@
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="description" content="Example snippet for a Bootstrap login form modal" />
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+       
         
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+
+            <link href="arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="arquivos/css/estilo.css" rel="stylesheet">
+    <link href="arquivos/css/3.css" rel="stylesheet">
+
 
 
         <!-- CSS code from Bootply.com editor -->
@@ -37,7 +39,7 @@
 		  <div class="modal-content">
 			  <div class="modal-header">
 				  <label>login</label>
-				  <h3 class="text-center">CYGNI</h3>
+				  <h3 class="text-center">CYGNI - Controle de patrimônios</h3>
 			  </div>
 			  <div class="modal-body">
 				  <form class="form col-md-12 center-block" method="POST" action="acoes/logar.php">

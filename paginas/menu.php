@@ -19,6 +19,7 @@
       <ul class="sidebar-nav-2" id="sub1" style="display:none">
         <li><a href="../paginas/categoria.php">Categoria</a></li>
         <li><a href="../paginas/departamento.php">Departamento</a></li>
+        <li><a href="../paginas/relbem.php">MBP</a></li>
         <li><a href="../paginas/patrimonio.php">Patrimônio</a></li>
         <li><a href="../paginas/predio.php">Prédio</a></li>
         <li><a href="../paginas/sala.php">Sala</a></li>

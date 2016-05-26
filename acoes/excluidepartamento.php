@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro de categoria</title>
+    <title>Excluir departamento</title>
 
     <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
@@ -22,7 +22,7 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Cadastro de categoria</p>
+            <p class="well lead">Excluir departamento</p>
 
             <div class="container">
               <div class="row">
@@ -34,21 +34,25 @@
 
                     <?php 
 
+
                     include_once("../acoes/connect.php");
 
-                    $inputnome=$_POST['inputnome'];
-                    $inputdescricao=$_POST['inputdescricao'];
+                    $iptexcluir=$_POST['iptexcluir'];
 
 
-                    $result = pg_query ($conexao , "insert into categoria(nome, descricao) values ('".$inputnome."', '".$inputdescricao."')");
+                    $sql = "DELETE FROM departamento WHere sigla='".$iptexcluir."'";
+                    $result = pg_query ($conexao , $sql);
 
+                                        
 
                     if (pg_affected_rows($result)!=0){
 
-                      echo "<h2>Categoria incluído com sucesso</h2>";
+                      echo "<h2>Departamento excluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Categoria NÃO incluído</h2>";
+                      echo "<h2>Departamento NÃO excluído</h2>";
+
+    				  echo pg_last_error();;
                     }
 
                     pg_close($conexao);
@@ -59,7 +63,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/categoria.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/departamento.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
