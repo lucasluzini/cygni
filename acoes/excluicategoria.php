@@ -50,7 +50,7 @@
                       echo "<h2>Categoria excluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2> Categoria NÃO excluído</h2><br><br>";
+                      echo "<h2> Categoria NÃO excluída</h2><br><br>";
 
                       echo "<h4>Causa: </h4>";
 
