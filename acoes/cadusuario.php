@@ -68,6 +68,9 @@ if ($_SESSION["nivel"] == 'f') {
                                       }else{
 
                                         echo "<h2>Usuário NÃO incluído</h2>";
+                                        echo "<br><br>";
+                                        echo "<h4>Causa: </h4>";
+                                        echo pg_last_error();
                                       }
                             }
 

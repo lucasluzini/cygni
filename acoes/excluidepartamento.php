@@ -54,7 +54,7 @@
 
                       echo "<h4>Causa: </h4>";
 
-    				  echo pg_last_error();
+    				          echo pg_last_error();
                     }
 
                     pg_close($conexao);

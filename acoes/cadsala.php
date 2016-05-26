@@ -54,6 +54,9 @@
                     }else{
 
                       echo "<h2>Sala NÃO incluído</h2>";
+                      echo "<br><br>";
+                      echo "<h4>Causa: </h4>";
+                      echo pg_last_error();
                     }
 
                     pg_close($conexao);
