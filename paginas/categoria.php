@@ -111,7 +111,7 @@
 
 					  echo "<td>";
 					 
-					  echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluidepartamento.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o departamento?')\">";
+					  echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluicategoria.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o categoria ?')\">";
 						echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
 						echo $linha[sigla];
 						echo "\"/>";
