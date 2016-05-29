@@ -88,14 +88,8 @@
     <div class="panel-heading">
     <h3 class="panel-title">Lista de departamentos </h3>
     </div>
-    <div class="panel-body">
-
-
-
-
-
-
-
+    
+    <div class="panel-body" >
   <?php
 
             include_once("../acoes/connect.php");
