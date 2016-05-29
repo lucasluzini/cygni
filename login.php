@@ -31,7 +31,7 @@
     
     <!-- HTML code from Bootply.com editor -->
     
-    <body  >
+    <body background="im.jpg" >
         
         <!--login modal-->
 		<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
