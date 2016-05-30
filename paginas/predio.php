@@ -65,10 +65,7 @@
         </div>
       </div>
     </div>
-    
-  </div>
-
-  <br/><br/>
+    <br/><br/>
 
   <div class="container">
 
@@ -126,7 +123,10 @@
 
           pg_close($conexao);
     ?>
-    </div>
+    </div>    
+  </div>
+
+
 
   <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
   <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>

@@ -100,79 +100,67 @@
         </div>
       </div>
     </div>
-    
+      <br/><br/>
+      <div class="container">
+
+      <div class="panel panel-primary">
+      <div class="panel-heading">
+      <h3 class="panel-title">Lista de Salas</h3>
+      </div>
+      <div class="panel-body">
+      <?php
+
+          include_once("../acoes/connect.php");
+
+
+          print("      
+                
+                   <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                    <tr>
+                  
+                      <th>Comprimento</th>
+                      <th>Largura</th>
+                      <th>Código do prédio</th>
+                       <th>Sigla do departamento</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    ");
+
+
+          $sql = "SELECT * FROM sala";
+          $resultado = pg_query ($conexao , $sql);
+
+
+          while ($linha=pg_fetch_array($resultado)) {
+            echo "<tr>";
+            echo "<td>".$linha[comprimento]."</td>";
+            echo "<td>".$linha[largura]."</td>";
+            echo "<td>".$linha[ codpredio]."</td>";
+            echo "<td>".$linha[sigladpto]."</td>";
+
+            echo "<td>";
+           
+            echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluisala.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir a sala ?')\">";
+            echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+            echo $linha[numero];
+            echo "\"/>";
+            echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+            echo "</form>";
+        
+            echo "</td>";
+            echo "</tr>";
+          };
+
+
+          pg_close($conexao);
+    ?>
+    </div>
   </div>
-			<div class="container">
-
-		  <div class="panel panel-primary">
-			<div class="panel-heading">
-			<h3 class="panel-title">Lista de Salas</h3>
-			</div>
-			<div class="panel-body">
-
-
-
-
-
-
-
-		  <?php
-
-					include_once("../acoes/connect.php");
-
-
-					print("      
-								
-								   <div class=\"table-responsive col-md-12\">
-									<table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
-									  <thead>
-										<tr>
-									
-										  <th>Comprimento</th>
-										  <th>Largura</th>
-										  <th>Código do prédio</th>
-										   <th>Sigla do departamento</th>
-										</tr>
-									  </thead>
-									  <tbody>
-
-										");
-
-
-					$sql = "SELECT * FROM sala";
-					$resultado = pg_query ($conexao , $sql);
-
-
-					while ($linha=pg_fetch_array($resultado)) {
-					  echo "<tr>";
-					  echo "<td>".$linha[comprimento]."</td>";
-					  echo "<td>".$linha[largura]."</td>";
-					  echo "<td>".$linha[ codpredio]."</td>";
-					  echo "<td>".$linha[sigladpto]."</td>";
-
-					  echo "<td>";
-					 
-					  echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluisala.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir a sala ?')\">";
-						echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
-						echo $linha[numero];
-						echo "\"/>";
-					  echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
-					  echo "</form>";
-				
-					  echo "</td>";
-					  echo "</tr>";
-					};
-
-
-					pg_close($conexao);
-		?>
-		</div>
-
-
-
-
-
-
+			
   <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
   <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
   <script src="../arquivos/js/menu.js"></script>

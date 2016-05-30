@@ -62,75 +62,64 @@
         </div>
       </div>
     </div>
-    
+      <br/><br/>
+      <div class="container">
+
+      <div class="panel panel-primary">
+      <div class="panel-heading">
+      <h3 class="panel-title">Lista de Categorias</h3>
+      </div>
+      <div class="panel-body">
+      <?php
+
+          include_once("../acoes/connect.php");
+
+
+          print("      
+                
+                   <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                    <tr>
+                  
+                      <th>Nome</th>
+                      <th>Descrição</th>
+                      <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    ");
+
+
+          $sql = "SELECT * FROM categoria";
+          $resultado = pg_query ($conexao , $sql);
+
+
+          while ($linha=pg_fetch_array($resultado)) {
+            echo "<tr>";
+            echo "<td>".$linha[nome]."</td>";
+            echo "<td>".$linha[descricao]."</td>";
+
+            echo "<td>";
+           
+            echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluicategoria.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o categoria ?')\">";
+            echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+            echo $linha[sigla];
+            echo "\"/>";
+            echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+            echo "</form>";
+        
+            echo "</td>";
+            echo "</tr>";
+          };
+
+
+          pg_close($conexao);
+    ?>
+    </div>
   </div>
-			<div class="container">
-
-		  <div class="panel panel-primary">
-			<div class="panel-heading">
-			<h3 class="panel-title">Lista de Categorias</h3>
-			</div>
-			<div class="panel-body">
-
-
-
-
-
-
-
-		  <?php
-
-					include_once("../acoes/connect.php");
-
-
-					print("      
-								
-								   <div class=\"table-responsive col-md-12\">
-									<table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
-									  <thead>
-										<tr>
-									
-										  <th>Nome</th>
-										  <th>Descrição</th>
-										  <th>Ações</th>
-										</tr>
-									  </thead>
-									  <tbody>
-
-										");
-
-
-					$sql = "SELECT * FROM categoria";
-					$resultado = pg_query ($conexao , $sql);
-
-
-					while ($linha=pg_fetch_array($resultado)) {
-					  echo "<tr>";
-					  echo "<td>".$linha[nome]."</td>";
-					  echo "<td>".$linha[descricao]."</td>";
-
-					  echo "<td>";
-					 
-					  echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluicategoria.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o categoria ?')\">";
-						echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
-						echo $linha[sigla];
-						echo "\"/>";
-					  echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
-					  echo "</form>";
-				
-					  echo "</td>";
-					  echo "</tr>";
-					};
-
-
-					pg_close($conexao);
-		?>
-		</div>
-
-
-
-
-
+			
   <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
   <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>
   <script src="../arquivos/js/menu.js"></script>

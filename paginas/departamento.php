@@ -75,12 +75,7 @@
       </div>
     </div>
   </div>
-
-</div>
-
-
-
-<br/><br/>
+  <br/><br/>
 
 <div class="container">
 
@@ -156,17 +151,7 @@
             pg_close($conexao);
 ?>
 </div>
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 
