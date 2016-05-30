@@ -39,10 +39,8 @@
 
                     $iptexcluir=$_POST['iptexcluir'];
 
-
-                    $sql = "DELETE FROM sala WHere numero='".$iptexcluir."'";
+                    $sql = "DELETE FROM sala WHere numero=".$iptexcluir;
                     $result = pg_query ($conexao , $sql);
-
                                         
 
                     if (pg_affected_rows($result)!=0){

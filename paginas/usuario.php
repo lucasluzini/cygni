@@ -144,7 +144,65 @@ if ($_SESSION["nivel"] == 'f') {
         </div>
       </div>
     </div>
-    
+      <br/><br/>  
+      <div class="container">
+
+      <div class="panel panel-primary">
+      <div class="panel-heading">
+      <h3 class="panel-title">Lista de Usuarios</h3>
+      </div>
+      <div class="panel-body">
+      <?php
+
+          include_once("../acoes/connect.php");
+
+
+          print("      
+                
+                   <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                    <tr>
+                  
+                      <th>Login</th>
+                      <th>Nome</th>
+                      <th>Senha</th>
+                      <th>Nivel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    ");
+
+
+          $sql = "SELECT * FROM usuario";
+          $resultado = pg_query ($conexao , $sql);
+
+
+          while ($linha=pg_fetch_array($resultado)) {
+            echo "<tr>";
+            echo "<td>".$linha[login]."</td>";
+            echo "<td>".$linha[nome]."</td>";
+            echo "<td>".$linha[senha]."</td>";
+            echo "<td>".$linha[nivel]."</td>";
+
+            echo "<td>";
+           
+            echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluiusuario.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o usuario?')\">";
+            echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+            echo $linha[login];
+            echo "\"/>";
+            echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+            echo "</form>";
+        
+            echo "</td>";
+            echo "</tr>";
+          };
+
+
+          pg_close($conexao);
+    ?>
+    </div>
   </div>
 
 

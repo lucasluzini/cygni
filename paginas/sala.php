@@ -100,7 +100,7 @@
         </div>
       </div>
     </div>
-      <br/><br/>
+      <br/><br/>  
       <div class="container">
 
       <div class="panel panel-primary">
@@ -119,7 +119,7 @@
                   <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
                     <thead>
                     <tr>
-                  
+                      <th>Numero</th>
                       <th>Comprimento</th>
                       <th>Largura</th>
                       <th>Código do prédio</th>
@@ -137,9 +137,10 @@
 
           while ($linha=pg_fetch_array($resultado)) {
             echo "<tr>";
+            echo "<td>".$linha[numero]."</td>";
             echo "<td>".$linha[comprimento]."</td>";
             echo "<td>".$linha[largura]."</td>";
-            echo "<td>".$linha[ codpredio]."</td>";
+            echo "<td>".$linha[codpredio]."</td>";
             echo "<td>".$linha[sigladpto]."</td>";
 
             echo "<td>";

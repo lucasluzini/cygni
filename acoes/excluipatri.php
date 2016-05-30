@@ -40,7 +40,7 @@
                     $iptexcluir=$_POST['iptexcluir'];
 
 
-                    $sql = "DELETE FROM bempatrimonial WHere codigo='".$iptexcluir."'";
+                    $sql = "DELETE FROM bempatrimonial WHere numero=".$iptexcluir;
                     $result = pg_query ($conexao , $sql);
 
                                         

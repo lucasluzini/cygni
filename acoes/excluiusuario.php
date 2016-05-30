@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Excluir Predio</title>
+    <title>Excluir Login</title>
 
     <link href="../arquivos/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../arquivos/css/estilo.css" rel="stylesheet">
@@ -22,7 +22,7 @@
       <div class="page-content inset">
         <div class="row">
           <div class="col-md-12">
-            <p class="well lead">Excluir Predio</p>
+            <p class="well lead">Excluir Login</p>
 
             <div class="container">
               <div class="row">
@@ -40,17 +40,17 @@
                     $iptexcluir=$_POST['iptexcluir'];
 
 
-                    $sql = "DELETE FROM predio WHere codigo='".$iptexcluir."'";
+                    $sql = "DELETE FROM usuario WHere login='".$iptexcluir."'";
                     $result = pg_query ($conexao , $sql);
 
                                         
 
                     if (pg_affected_rows($result)!=0){
 
-                      echo "<h2>Predio excluído com sucesso</h2>";
+                      echo "<h2>Login excluído com sucesso</h2>";
                     }else{
 
-                      echo "<h2>Predio NÃO excluído</h2><br><br>";
+                      echo "<h2>Login NÃO excluída</h2><br><br>";
 
                       echo "<h4>Causa: </h4>";
 
@@ -65,7 +65,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/predio.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/usuario.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">

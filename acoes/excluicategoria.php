@@ -39,8 +39,7 @@
 
                     $iptexcluir=$_POST['iptexcluir'];
 
-
-                    $sql = "DELETE FROM categoria WHere codigo='".$iptexcluir."'";
+                    $sql = "DELETE FROM categoria WHere codigo=".$iptexcluir;
                     $result = pg_query ($conexao , $sql);
 
                                         
@@ -55,7 +54,7 @@
                       echo "<h4>Causa: </h4>";
 
     				          echo pg_last_error();
-                    }
+                   }
 
                     pg_close($conexao);
 

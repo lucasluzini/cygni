@@ -81,10 +81,9 @@
                   <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
                     <thead>
                     <tr>
-                  
+                      <th>codigo</th>
                       <th>Nome</th>
                       <th>Descrição</th>
-                      <th>Ações</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -98,6 +97,7 @@
 
           while ($linha=pg_fetch_array($resultado)) {
             echo "<tr>";
+            echo "<td>".$linha[codigo]."</td>";
             echo "<td>".$linha[nome]."</td>";
             echo "<td>".$linha[descricao]."</td>";
 
@@ -105,7 +105,7 @@
            
             echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluicategoria.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o categoria ?')\">";
             echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
-            echo $linha[sigla];
+            echo $linha[codigo];
             echo "\"/>";
             echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
             echo "</form>";
