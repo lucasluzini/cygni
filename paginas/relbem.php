@@ -208,13 +208,73 @@
         </div>
       </div>
     </div>
-    
+  <br/><br/>
+
+  <div class="container">
+
+      <div class="panel panel-primary">
+      <div class="panel-heading">
+      <h3 class="panel-title">Lista de MBP</h3>
+      </div>
+      <div class="panel-body">
+
+      <?php
+
+          include_once("../acoes/connect.php");
+
+
+          print("      
+                
+                   <div class=\"table-responsive col-md-12\">
+                  <table class=\"table table-striped\" cellspacing=\"0\" cellpadding=\"0\">
+                    <thead>
+                    <tr>
+                  
+                      <th>Numero</th>
+                      <th>data</th>
+                      <th>login</th>
+                      <th>number</th>
+                      <th>Sala Origem</th>
+                      <th>Sala Destino</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    ");
+
+
+          $sql = "SELECT * FROM mbp";
+          $resultado = pg_query ($conexao , $sql);
+
+
+          while ($linha=pg_fetch_array($resultado)) {
+            echo "<tr>";
+            echo "<td>".$linha[numero]."</td>";
+            echo "<td>".$linha[data]."</td>";
+            echo "<td>".$linha[logim]."</td>";
+            echo "<td>".$linha[numbem]."</td>";
+            echo "<td>".$linha[numsalaorigem]."</td>";
+            echo "<td>".$linha[numsaladestino]."</td>";
+
+            echo "<td>";
+           
+            echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluimbp.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir o MBP?')\">";
+            echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+            echo $linha[numero];
+            echo "\"/>";
+            echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+            echo "</form>";
+        
+            echo "</td>";
+            echo "</tr>";
+          };
+
+
+          pg_close($conexao);
+    ?>
+    </div>    
+
   </div>
-
-
-
-
-
 
   <script src="../arquivos/bootstrap/js/jquery-2.2.3.min.js"></script>
   <script src="../arquivos/bootstrap/js/bootstrap.min.js"></script>

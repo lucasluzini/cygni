@@ -88,7 +88,7 @@
                     <tr>
                   
                       <th>Codigo</th>
-                      <th>Nome/th>
+                      <th>Nome</th>
                       <th>Endereço</th>
                     </tr>
                     </thead>

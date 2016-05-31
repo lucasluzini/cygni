@@ -34,10 +34,20 @@
 
                     <?php 
 
+                    $iptexcluir=$_POST['iptexcluir'];
+
+                      $sql = "SELECT FROM mbp WHere login='".$iptexcluir."'";
+                      $result = pg_query ($conexao , $sql);
+
+
+                      if(pg_affected_rows($result)!=0){
+                        echo "Usuario nao pode ser Excluido por ter MBP vinculado a ele. Exluir MBP primeiramente.";
+                      }else{
+
 
                     include_once("../acoes/connect.php");
 
-                    $iptexcluir=$_POST['iptexcluir'];
+                    
 
 
                     $sql = "DELETE FROM usuario WHere login='".$iptexcluir."'";
@@ -56,7 +66,7 @@
 
     				          echo pg_last_error();
                     }
-
+                  }
                     pg_close($conexao);
 
                     ?>
