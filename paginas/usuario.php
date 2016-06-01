@@ -93,28 +93,28 @@ if ($_SESSION["nivel"] == 'f') {
                     <div class="row">
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Nome</label>
-                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" maxlength="50" required="Preencha este campo"/>
                       </div>
                       <div class="clearfix"></div>
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Login</label>
-                        <input class="form-control" id="inputlogin" name="inputlogin" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputlogin" name="inputlogin" placeholder="" type="text" maxlength="20" required="Preencha este campo"/>
                       </div>
                       <div class="clearfix"></div>
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Senha</label>
-                        <input class="form-control" id="inputsenha" name="inputsenha" placeholder="" type="password" required="Preencha este campo"/>
+                        <input class="form-control" id="inputsenha" name="inputsenha" placeholder="" type="password" maxlength="60" required="Preencha este campo"/>
                       </div>
                       <div class="clearfix"></div>
                       <div class="col-xs-6 col-md-6 form-group">
                         <label for="Nome">Confirme a senha</label>
-                        <input class="form-control" id="inputconfsenha" name="inputconfsenha" placeholder="" type="password" onkeyup="checkPass(); return false;" required="Preencha este campo"/>
+                        <input class="form-control" id="inputconfsenha" name="inputconfsenha" maxlength="60" placeholder="" type="password" onkeyup="checkPass(); return false;" required="Preencha este campo"/>
                         <span id="confirmMessage" class="confirmMessage"></span>
                       </div>
                       <div class="clearfix"></div>
                       <div class="col-xs-4 col-md-6 form-group">
                         <label for="Nome">Nivel de acesso</label>
-                        <select class="form-control"id="selectnivel" name="selectnivel" required="Preencha este campo">
+                        <select class="form-control"id="selectnivel" name="selectnivel" maxlength="1" required="Preencha este campo">
                           <option>Selecione</option>
                           <option value="g">Gerente</option>
                           <option value="f">Funcionário</option>

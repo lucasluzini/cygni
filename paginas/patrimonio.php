@@ -35,7 +35,7 @@
                     <div class="row">
                       <div class="col-xs-4 col-md-12 form-group">
                         <label for="Nome">Descrição</label>
-                        <input class="form-control" id="inputdescricao" name="inputdescricao" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputdescricao" name="inputdescricao" placeholder="" type="text" maxlength="80" required="Preencha este campo"/>
                       </div>
                     </div>
 
@@ -61,11 +61,11 @@
                     <div class="row">
                       <div class="col-xs-6 col-md-8 form-group">
                         <label for="Nome">Fornecedor</label>
-                        <input class="form-control" id="inputfornecedor" name="inputfornecedor" placeholder="" type="text" required="Preencha este campo"/>
+                        <input class="form-control" id="inputfornecedor" name="inputfornecedor" placeholder="" type="text" maxlength="60" required="Preencha este campo"/>
                       </div>
                       <div class="col-xs-4 col-md-4 form-group">
                         <label for="Nome">Situação</label>
-                        <select class="form-control"id="selectsituacao" name="selectsituacao" required="Preencha este campo">
+                        <select class="form-control"id="selectsituacao" name="selectsituacao" maxlength="1" required="Preencha este campo">
                           <option>Selecione</option>
                           <option value="e">Em uso</option>
                           <option value="m">Manutenção</option>

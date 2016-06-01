@@ -36,7 +36,7 @@
                     <div class="row">
                       <div class="col-xs-4 col-md-6 form-group">
                         <label for="Nome">Comprimento</label>
-                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="number" step="0.01" required="Preencha este campo"/>
+                        <input class="form-control" id="inputcomprimento" name="inputcomprimento" placeholder="" type="number" step="0.01"  required="Preencha este campo"/>
                       </div>
                       <div class="clearfix"></div>
                       <div class="col-xs-4 col-md-6 form-group">
@@ -65,7 +65,7 @@
 
                       <div class="col-xs-4 col-md-6 form-group">
                         <label for="Nome">Sigla do departamento</label>
-                        <select class="form-control" id="selectdepartamento" name="selectdepartamento" required="required">
+                        <select class="form-control" id="selectdepartamento" name="selectdepartamento" maxlength="5" required="required">
                           <option>Selecione</option>
 
                           <?php

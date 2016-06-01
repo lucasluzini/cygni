@@ -35,11 +35,11 @@
                     <div class="row">
                       <div class="col-xs-6 col-md-3 form-group">
                         <label for="Nome">Nome</label>
-                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required="Preencha este campo" />
+                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" maxlength="30" required="Preencha este campo" />
                       </div>
                       <div class="col-xs-4 col-md-9 form-group">
                         <label for="Nome">Descrição</label>
-                        <input class="form-control" id="inputdescricao" name="inputdescricao" placeholder="" type="text" required="Preencha este campo" />
+                        <input class="form-control" id="inputdescricao" name="inputdescricao" placeholder="" type="text" maxlength="80" required="Preencha este campo" />
                       </div>
                     </div>
                     <br />

@@ -35,14 +35,14 @@
                     <div class="row">
                       <div class="col-xs-4 col-md-12 form-group">
                         <label for="Nome">Nome</label>
-                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required="Preencha este campo" />
+                        <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" maxlength="50" required="Preencha este campo" />
                       </div>
                     </div> 
 
                     <div class="col-xs-4 col-md-12 form-group">
                       <div class="controls">
                         <label for="Nome">Endereço</label>
-                        <input class="form-control" id="inputendereco" name="inputendereco" placeholder=""  type="text" required="Preencha este campo" />
+                        <input class="form-control" id="inputendereco" name="inputendereco" placeholder=""  type="text" maxlength="100" required="Preencha este campo" />
                       </div>
                     </div>
                     <br> 

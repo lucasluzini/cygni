@@ -37,19 +37,19 @@
 
                     <div class="col-xs-6 col-md-6 form-group">
                       <label for="Nome">Sigla</label>
-                      <input class="form-control" id="inputsigla" name="inputsigla" placeholder="" type="text" required="Preencha este campo"/>
+                      <input class="form-control" id="inputsigla" name="inputsigla" placeholder="" type="text" maxlength="5" required="Preencha este campo"/>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="col-xs-6 col-md-6 form-group">
                       <label for="Nome">Nome</label>
-                      <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text" required="Preencha este campo"/>
+                      <input class="form-control" id="inputnome" name="inputnome" placeholder="" type="text"  maxlength="30" required="Preencha este campo"/>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="col-xs-6 col-md-6 form-group">
                       <label for="Nome">Responsável</label>
-                      <input class="form-control" id="inputresponsavel" name="inputresponsavel" placeholder="" type="text" required="Preencha este campo"/>
+                      <input class="form-control" id="inputresponsavel" name="inputresponsavel" placeholder="" type="text"  maxlength="50" required="Preencha este campo"/>
                     </div>
                     <div class="clearfix"></div>
                   </div>
