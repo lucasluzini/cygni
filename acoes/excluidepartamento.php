@@ -33,12 +33,19 @@
 
 
                     <?php 
-
-
                     include_once("../acoes/connect.php");
+                    	$iptexcluir=$_POST['iptexcluir'];
 
-                    $iptexcluir=$_POST['iptexcluir'];
+                      $sql = "SELECT * FROM sala WHERE sigladpto='".$iptexcluir."'";
+                      $result = pg_query ($conexao , $sql);
 
+                      
+                      $linha=pg_fetch_array($result);
+                      
+
+                      if($linha[numero]!=null){
+                        echo "<h4>Departamento nao pode ser excluída porque existem Salas relacionadas a ele, exclua as salas primeiro.</h4>";
+                      }else{
 
                     $sql = "DELETE FROM departamento WHere sigla='".$iptexcluir."'";
                     $result = pg_query ($conexao , $sql);
@@ -56,9 +63,9 @@
 
     				          echo pg_last_error();
                     }
-
+                  }
                     pg_close($conexao);
-
+                    	
                     ?>
 
                   </div>

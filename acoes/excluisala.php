@@ -34,10 +34,19 @@
 
                     <?php 
 
-
                     include_once("../acoes/connect.php");
+                      $iptexcluir=$_POST['iptexcluir'];
 
-                    $iptexcluir=$_POST['iptexcluir'];
+                      $sql = "SELECT * FROM bempatrimonial WHERE numsala=".$iptexcluir;
+                      $result = pg_query ($conexao , $sql);
+
+                      
+                      $linha=pg_fetch_array($result);
+                      
+
+                      if($linha[numero]!=null){
+                        echo "<h4>SALA nao pode ser excluída porque existem bempatrimonial relacionando a ela, exclua os bempatrimonias primeiro.</h4>";
+                      }else{
 
                     $sql = "DELETE FROM sala WHere numero=".$iptexcluir;
                     $result = pg_query ($conexao , $sql);
@@ -54,7 +63,7 @@
 
     				          echo pg_last_error();
                     }
-
+                  }
                     pg_close($conexao);
 
                     ?>

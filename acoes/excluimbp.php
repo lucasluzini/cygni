@@ -65,7 +65,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/categoria.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/relbem.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">

@@ -34,12 +34,21 @@
 
                     <?php 
 
-
                     include_once("../acoes/connect.php");
+                      $iptexcluir=$_POST['iptexcluir'];
 
-                    $iptexcluir=$_POST['iptexcluir'];
+                      $sql = "SELECT * FROM sala WHERE codpredio=".$iptexcluir;
+                      $result = pg_query ($conexao , $sql);
 
+                      
+                      $linha=pg_fetch_array($result);
+                      
 
+                      if($linha[numero]!=null){
+                        echo "<h4>Predio nao pode ser excluída porque existem SALA relacionando a ela, exclua as SALA primeiro.</h4>";
+                      }else{
+
+          
                     $sql = "DELETE FROM predio WHere codigo='".$iptexcluir."'";
                     $result = pg_query ($conexao , $sql);
 
@@ -56,7 +65,7 @@
 
     				          echo pg_last_error();
                     }
-
+                  }
                     pg_close($conexao);
 
                     ?>

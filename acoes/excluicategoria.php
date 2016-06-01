@@ -33,29 +33,36 @@
 
 
                     <?php 
+                    	include_once("../acoes/connect.php");
+                    	$iptexcluir=$_POST['iptexcluir'];
 
+                      $sql = "SELECT * FROM bempatrimonial WHERE codcat=".$iptexcluir;
+                      $result = pg_query ($conexao , $sql);
 
-                    include_once("../acoes/connect.php");
+                      
+                      $linha=pg_fetch_array($result);
+                      
 
-                    $iptexcluir=$_POST['iptexcluir'];
+                      if($linha[numero]!=null){
+                        echo "<h4>Categoria nao pode ser excluída porque existem patrimonios relacionando a ela, exclua os patrimonios primeiro.</h4>";
+                      }else{
+                  
+		                    $sql = "DELETE FROM categoria WHere codigo=".$iptexcluir;
+		                    $result = pg_query ($conexao , $sql);
+                                       
 
-                    $sql = "DELETE FROM categoria WHere codigo=".$iptexcluir;
-                    $result = pg_query ($conexao , $sql);
+	                    if (pg_affected_rows($result)!=0){
 
-                                        
+	                      echo "<h2>Categoria excluído com sucesso</h2>";
+	                    }else{
 
-                    if (pg_affected_rows($result)!=0){
+	                      echo "<h2> Categoria NÃO excluída</h2><br><br>";
 
-                      echo "<h2>Categoria excluído com sucesso</h2>";
-                    }else{
+	                      echo "<h4>Causa: </h4>";
 
-                      echo "<h2> Categoria NÃO excluída</h2><br><br>";
-
-                      echo "<h4>Causa: </h4>";
-
-    				          echo pg_last_error();
-                   }
-
+	    				          echo pg_last_error();
+	                   }
+	               }
                     pg_close($conexao);
 
                     ?>

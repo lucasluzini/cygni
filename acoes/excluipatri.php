@@ -34,11 +34,19 @@
 
                     <?php 
 
+                      include_once("../acoes/connect.php");
+                      $iptexcluir=$_POST['iptexcluir'];
 
-                    include_once("../acoes/connect.php");
+                      $sql = "SELECT * FROM mbp WHERE numbem=".$iptexcluir;
+                      $result = pg_query ($conexao , $sql);
 
-                    $iptexcluir=$_POST['iptexcluir'];
+                      
+                      $linha=pg_fetch_array($result);
+                      
 
+                      if($linha[numero]!=null){
+                        echo "<h4>Patrimonio nao pode ser excluída porque existem MBP relacionando a ela, exclua as MBP primeiro.</h4>";
+                      }else{
 
                     $sql = "DELETE FROM bempatrimonial WHere numero=".$iptexcluir;
                     $result = pg_query ($conexao , $sql);
@@ -56,7 +64,7 @@
 
     				          echo pg_last_error();
                     }
-
+                  }
                     pg_close($conexao);
 
                     ?>
@@ -65,7 +73,7 @@
 
                   <br/><br/>
 
-                  <form id="contact" method="post" class="form" role="form" action="../paginas/categoria.php">
+                  <form id="contact" method="post" class="form" role="form" action="../paginas/patrimonio.php">
 
                     <div class="row">
                       <div class="col-xs-12 col-md-12 form-group">
