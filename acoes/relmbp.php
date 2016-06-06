@@ -99,6 +99,16 @@
               $temp = pg_fetch_row(pg_query ($conexao, "SELECT p.nome, s.sigladpto FROM predio p INNER JOIN sala s ON p.codigo=s.codpredio WHERE s.numero = ".$row[5]));
               echo "<td>".$temp[0]." - ".$temp[1]."</td>";
 
+              echo "<td>";
+           
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluimbp1.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir a MBP ?')\">";
+              echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+              echo $row[0];
+              echo "\"/>";
+              echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+              echo "</form>";
+        
+              echo "</td>";
               echo "</tr>";
             };
 
@@ -181,6 +191,16 @@
               $temp = pg_fetch_row(pg_query ($conexao, "SELECT p.nome, s.sigladpto FROM predio p INNER JOIN sala s ON p.codigo=s.codpredio WHERE s.numero = ".$row[5]));
               echo "<td>".$temp[0]." - ".$temp[1]."</td>";
 
+              echo "<td>";
+           
+              echo "<form style=\"display: inline-block;\" method=\"post\" action=\"../acoes/excluimbp1.php\" onsubmit=\"return confirm('Você tem certeza que deseje excluir a MBP ?')\">";
+              echo "<input id=\"iptexcluir\" name=\"iptexcluir\" type=\"hidden\" value=\"";
+              echo $row[0];
+              echo "\"/>";
+              echo "<button class=\"btn btn-danger btn-xs\" type=\"submit\">Excluir</button>";
+              echo "</form>";
+        
+              echo "</td>";
               echo "</tr>";
             };
 
